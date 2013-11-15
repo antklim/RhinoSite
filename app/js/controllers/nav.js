@@ -1,7 +1,10 @@
 function NavCtrl($scope, $location, SiteMap, SiteLang, SiteLangList, $timeout) {
 	$scope.activeItem = 'home';
-	$scope.currentLang = angular.copy( SiteLang );
 	$scope.langList = angular.copy( SiteLangList );
+	$scope.currentLang = angular.copy( SiteLang );
+	$scope.siteMap = angular.copy( SiteMap );
+
+	console.log($scope.siteMap);
 
 	$scope.nav = function(item) {
 		if (_.has(SiteMap, item)) {
