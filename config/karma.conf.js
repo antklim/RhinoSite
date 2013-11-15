@@ -6,6 +6,7 @@ module.exports = function(config){
       'app/lib/angular/angular.js',
       'app/lib/angular/angular-*.js',
       'app/lib/require/require.js',
+      'app/lib/bootstrap/*.js',
       'test/lib/angular/angular-mocks.js',
       'app/js/modules/*.js',
       'app/js/services/*.js',

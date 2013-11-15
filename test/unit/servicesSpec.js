@@ -26,7 +26,7 @@ describe('service', function() {
 
   describe('current language', function() {
   	it('current language should be russian', inject(function(SiteLang) {
-  		expect(SiteLang).toEqual('ru');
+  		expect(SiteLang).toEqual({key: 'ru', name: 'RU'});
   	}));
   });
 });

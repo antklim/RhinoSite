@@ -1,17 +1,10 @@
 'use strict';
 
 /* jasmine specs for controllers go here */
-/*
-describe('controllers', function(){
-  beforeEach(module('myApp.controllers'));
+describe('NavCtrl', function(){
+	beforeEach(module('RhinoIn'));
 
-
-  it('should ....', inject(function() {
-    //spec body
-  }));
-
-  it('should ....', inject(function() {
-    //spec body
-  }));
+	it('should change SiteLang', inject(function(SiteLang) {
+		expect(true).toBe(false);
+	}));
 });
-*/
