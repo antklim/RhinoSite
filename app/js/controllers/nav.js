@@ -4,8 +4,6 @@ function NavCtrl($scope, $location, SiteMap, SiteLang, SiteLangList, $timeout) {
 	$scope.currentLang = angular.copy( SiteLang );
 	$scope.siteMap = angular.copy( SiteMap );
 
-	console.log($scope.siteMap);
-
 	$scope.nav = function(item) {
 		if (_.has(SiteMap, item)) {
 			$location.path(SiteMap[ item ].location);

@@ -1,3 +1,7 @@
+<div ng-controller="HomeCtrl">
+<div ng-switch on="currentLang.key">
+
+<div ng-switch-when="en">
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
   <div class="container">
@@ -27,3 +31,13 @@
     </div>
   </div>
 </div> <!-- /container -->
+</div> <!-- EN languauge -->
+
+<div ng-switch-when="ru">
+  <div class="container">
+    Glavnaya
+  </div>
+</div> <!-- RU language -->
+
+</div>
+</div>
