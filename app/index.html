@@ -40,8 +40,8 @@
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a href="" class="dropdown-toggle" data-toggle="dropdown">{{ currentLang.name }}<b class="caret"></b></a>
-              <ul class="dropdown-menu" role="menu">
-                <li ng-repeat='lng in langList'><a href="" hm-tap='lang( lng )'>{{ lng.name }}</a></li>
+              <ul class="dropdown-menu language-menu" role="menu">
+                <li ng-repeat='lng in langList' role="presentation"><a role="menuitem" href="" hm-tap='lang( lng )'>{{ lng.name }}</a></li>
               </ul>
             </li>
           </ul>
