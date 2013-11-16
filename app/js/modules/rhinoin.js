@@ -4,7 +4,7 @@
 // Declare app level module which depends on filters, and services
 var RhinoIn = angular.module('RhinoIn', ['ngRoute','hmTouchEvents','ui.bootstrap']);
 
-RhinoIn.config(['$routeProvider', '$controllerProvider', '$compileProvider', '$filterProvider', '$provide', '$locationProvider' , 
+RhinoIn.config(['$routeProvider', '$controllerProvider', '$compileProvider', '$filterProvider', '$provide', '$locationProvider' ,
 	function( $routeProvider, $controllerProvider, $compileProvider, $filterProvider, $provide, $locationProvider ) {
 
 		//$locationProvider.html5Mode(true);
@@ -13,29 +13,28 @@ RhinoIn.config(['$routeProvider', '$controllerProvider', '$compileProvider', '$f
 		RhinoIn.compileProvider = $compileProvider;
 		RhinoIn.routeProvider = $routeProvider;
 		RhinoIn.filterProvider = $filterProvider;
-		RhinoIn.provide = $provide;		
+		RhinoIn.provide = $provide;
 
 		$routeProvider.when('/', {redirectTo: '/home'});
 
 		$routeProvider.when('/home', {
-			//template: '<h1>home</h1>'
 			templateUrl: './partials/home.html'
 		});
 
 		$routeProvider.when('/about', {
-			template: '<h1>about</h1>'
+			templateUrl: './partials/about.html'
 		});
 
 		$routeProvider.when('/services', {
-			template: '<h1>services</h1>'
+			templateUrl: './partials/services.html'
 		});
 
 		$routeProvider.when('/products', {
-			template: '<h1>products</h1>'
+			templateUrl: './partials/products.html'
 		});
 
 		$routeProvider.when('/contact', {
-			template: '<h1>contact</h1>'
+			templateUrl: './partials/contact.html'
 		});
 
 		$routeProvider.otherwise({redirectTo: '/'});

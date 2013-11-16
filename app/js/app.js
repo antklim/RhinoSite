@@ -22,7 +22,7 @@ requirejs.config({
 			deps: ['angular']
 		},
 		'uiBootstrap': {
-			deps: ['angular']	
+			deps: ['angular']
 		},
 		'rhinoin': {
 			deps: ['angularRoute', 'angularHammer', 'underscore', 'uiBootstrap']
@@ -36,9 +36,21 @@ requirejs.config({
 		'controllers/home': {
 			deps: ['services/services']
 		},
+		'controllers/about': {
+			deps: ['services/services']
+		},
+		'controllers/services': {
+			deps: ['services/services']
+		},
+		'controllers/products': {
+			deps: ['services/services']
+		},
+		'controllers/contact': {
+			deps: ['services/services']
+		},
 		'bootstrap': {
-			deps: ['rhinoin', 'controllers/nav', 'controllers/home']
-		}	
+			deps: ['rhinoin', 'controllers/nav', 'controllers/home', 'controllers/about', 'controllers/services', 'controllers/products', 'controllers/contact']
+		}
 	}
 });
 
