@@ -18,23 +18,123 @@ RhinoIn.config(['$routeProvider', '$controllerProvider', '$compileProvider', '$f
 		$routeProvider.when('/', {redirectTo: '/home'});
 
 		$routeProvider.when('/home', {
-			templateUrl: './partials/home.html'
+			templateUrl: './partials/home.html',
+			controller: 'HomeCtrl',
+			resolve: {
+			
+				load: ['$q', '$rootScope', function($q, $rootScope) {
+
+					var deferred = $q.defer();
+					var deps = [
+						'services/services',
+						'controllers/home'
+					];
+
+					require(deps, function() {
+						$rootScope.$apply(function() {
+							deferred.resolve();
+						});
+					});
+
+					return deferred.promise;
+				}]
+			}
 		});
 
 		$routeProvider.when('/about', {
-			templateUrl: './partials/about.html'
+			templateUrl: './partials/about.html',
+			controller: 'AboutCtrl',
+			resolve: {
+			
+				load: ['$q', '$rootScope', function($q, $rootScope) {
+
+					var deferred = $q.defer();
+					var deps = [
+						'services/services',
+						'controllers/about'
+					];
+
+					require(deps, function() {
+						$rootScope.$apply(function() {
+							deferred.resolve();
+						});
+					});
+
+					return deferred.promise;
+				}]
+			}
 		});
 
 		$routeProvider.when('/services', {
-			templateUrl: './partials/services.html'
+			templateUrl: './partials/services.html',
+			controller: 'ServicesCtrl',
+			resolve: {
+			
+				load: ['$q', '$rootScope', function($q, $rootScope) {
+
+					var deferred = $q.defer();
+					var deps = [
+						'services/services',
+						'controllers/services'
+					];
+
+					require(deps, function() {
+						$rootScope.$apply(function() {
+							deferred.resolve();
+						});
+					});
+
+					return deferred.promise;
+				}]
+			}
 		});
 
 		$routeProvider.when('/products', {
-			templateUrl: './partials/products.html'
+			templateUrl: './partials/products.html',
+			controller: 'ProductsCtrl',
+			resolve: {
+			
+				load: ['$q', '$rootScope', function($q, $rootScope) {
+
+					var deferred = $q.defer();
+					var deps = [
+						'services/services',
+						'controllers/products'
+					];
+
+					require(deps, function() {
+						$rootScope.$apply(function() {
+							deferred.resolve();
+						});
+					});
+
+					return deferred.promise;
+				}]
+			}
 		});
 
 		$routeProvider.when('/contact', {
-			templateUrl: './partials/contact.html'
+			templateUrl: './partials/contact.html',
+			controller: 'ContactCtrl',
+			resolve: {
+			
+				load: ['$q', '$rootScope', function($q, $rootScope) {
+
+					var deferred = $q.defer();
+					var deps = [
+						'services/services',
+						'controllers/contact'
+					];
+
+					require(deps, function() {
+						$rootScope.$apply(function() {
+							deferred.resolve();
+						});
+					});
+
+					return deferred.promise;
+				}]
+			}
 		});
 
 		$routeProvider.otherwise({redirectTo: '/'});

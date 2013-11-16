@@ -33,27 +33,11 @@ requirejs.config({
 		'controllers/nav': {
 			deps: ['services/services']
 		},
-		'controllers/home': {
-			deps: ['services/services']
-		},
-		'controllers/about': {
-			deps: ['services/services']
-		},
-		'controllers/services': {
-			deps: ['services/services']
-		},
-		'controllers/products': {
-			deps: ['services/services']
-		},
-		'controllers/contact': {
-			deps: ['services/services']
-		},
 		'controllers/search': {
 			deps: ['services/services']
 		},
 		'bootstrap': {
-			deps: ['rhinoin', 'controllers/nav', 'controllers/home', 'controllers/about',
-			'controllers/services', 'controllers/products', 'controllers/contact', 'controllers/search']
+			deps: ['rhinoin', 'controllers/nav', 'controllers/search']
 		}
 	}
 });
