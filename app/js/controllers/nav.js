@@ -1,4 +1,4 @@
-function NavCtrl($scope, $location, SiteMap, SiteLang, SiteLangList, $timeout) {
+function NavCtrl($scope, $location, SiteMap, SiteLang, SiteLangList) {
 	$scope.activeItem = 'home';
 	$scope.langList = angular.copy( SiteLangList );
 	$scope.currentLang = angular.copy( SiteLang.getLanguage() );
@@ -10,6 +10,7 @@ function NavCtrl($scope, $location, SiteMap, SiteLang, SiteLangList, $timeout) {
 			$scope.activeItem = item;
 		} else {
 			$location.path(SiteMap[ 'default' ].location);
+			$scope.activeItem = 'home';
 		}
 	};
 
@@ -17,6 +18,4 @@ function NavCtrl($scope, $location, SiteMap, SiteLang, SiteLangList, $timeout) {
 		$scope.currentLang = lng;
 		SiteLang.setLanguage(lng);
 	};
-
-
 }
