@@ -1,7 +1,7 @@
 function NavCtrl($scope, $location, SiteMap, SiteLang, SiteLangList, $timeout) {
 	$scope.activeItem = 'home';
 	$scope.langList = angular.copy( SiteLangList );
-	$scope.currentLang = angular.copy( SiteLang );
+	$scope.currentLang = angular.copy( SiteLang.getLanguage() );
 	$scope.siteMap = angular.copy( SiteMap );
 
 	$scope.nav = function(item) {
@@ -15,7 +15,7 @@ function NavCtrl($scope, $location, SiteMap, SiteLang, SiteLangList, $timeout) {
 
 	$scope.lang = function(lng) {
 		$scope.currentLang = lng;
-		SiteLang = lng;
+		SiteLang.setLanguage(lng);
 	};
 
 

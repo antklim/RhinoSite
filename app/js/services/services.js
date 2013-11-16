@@ -9,7 +9,21 @@ RhinoIn.value('SiteLangList', [
 	{ key: 'en', name: 'EN' }
 ]);
 
-RhinoIn.value('SiteLang', {key: 'ru', name: 'RU'});
+//RhinoIn.value('SiteLang', {key: 'ru', name: 'RU'});
+
+RhinoIn.factory('SiteLang', [function(){
+	var language = {key: 'ru', name: 'RU'};
+
+	return {
+		getLanguage: function() {
+			return language;
+		},
+		setLanguage: function(lang) {
+			language = lang;
+			return lang;
+		}
+	};
+}]);
 
 RhinoIn.value('SiteMap', {
 	'default': {
