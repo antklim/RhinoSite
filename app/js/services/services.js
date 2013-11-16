@@ -70,7 +70,15 @@ RhinoIn.value('SiteMap', {
 				'ru': '\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u044b',
 				'en': 'Contact'
 			}
-		}
+		},
+	'signin':
+		{
+			location: '/signin',
+			name: {
+				'ru': '\u0412\u0445\u043e\u0434',
+				'en': 'Sign In'
+			}
+		},
 });
 
 RhinoIn.value('SearchForm', {
