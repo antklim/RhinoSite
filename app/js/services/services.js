@@ -9,8 +9,6 @@ RhinoIn.value('SiteLangList', [
 	{ key: 'en', name: 'EN' }
 ]);
 
-//RhinoIn.value('SiteLang', {key: 'ru', name: 'RU'});
-
 RhinoIn.factory('SiteLang', [function(){
 	var language = {key: 'ru', name: 'RU'};
 
@@ -73,4 +71,22 @@ RhinoIn.value('SiteMap', {
 				'en': 'Contact'
 			}
 		}
+});
+
+RhinoIn.value('SearchForm', {
+	'buttons': {
+		search: {
+			name: {
+				'ru': '\u041f\u043e\u0438\u0441\u043a',
+				'en': 'Search'
+			}
+		}
+	},
+	'placeholder': {
+		name: {
+			'ru': "\u041f\u043e\u0438\u0441\u043a\u0020\u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u043e\u0432...",
+			'en': "Search algorithms..."
+		}
+	},
+
 });

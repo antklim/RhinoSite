@@ -37,6 +37,12 @@
             <li class='{{ activeItem == "products" && "active" || "" }}'><a href="" hm-tap='nav("products")'>{{ siteMap.products.name[ currentLang.key ] }}</a></li>
             <li class='{{ activeItem == "contact"  && "active" || "" }}'><a href="" hm-tap='nav("contact")'>{{ siteMap.contact.name[ currentLang.key ] }}</a></li>
           </ul>
+          <form class="navbar-form navbar-left" role="search" ng-controller="SearchCtrl">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="{{ getPlaceholder() }}" ng-model="searchFor">
+            </div>
+            <button type="submit" class="btn btn-default" hm-tap="search()">{{ getButtonName() }}</button>
+          </form>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a href="" class="dropdown-toggle" data-toggle="dropdown">{{ currentLang.name }}<b class="caret"></b></a>

@@ -38,4 +38,16 @@ describe('service', function() {
       
   	}));
   });
+
+  describe('search form', function() {
+    it('current language should get/set language', inject(function(SearchForm) {
+      expect(SearchForm).not.toBeUndefined();
+      expect(SearchForm.buttons).not.toBeUndefined();
+      expect(SearchForm.buttons.search).not.toBeUndefined();
+      expect(SearchForm.buttons.search.name).not.toBeUndefined();
+
+      expect(SearchForm.placeholder).not.toBeUndefined();
+      expect(SearchForm.placeholder.name).not.toBeUndefined();
+    }));
+  });  
 });

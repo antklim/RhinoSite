@@ -48,8 +48,12 @@ requirejs.config({
 		'controllers/contact': {
 			deps: ['services/services']
 		},
+		'controllers/search': {
+			deps: ['services/services']
+		},
 		'bootstrap': {
-			deps: ['rhinoin', 'controllers/nav', 'controllers/home', 'controllers/about', 'controllers/services', 'controllers/products', 'controllers/contact']
+			deps: ['rhinoin', 'controllers/nav', 'controllers/home', 'controllers/about',
+			'controllers/services', 'controllers/products', 'controllers/contact', 'controllers/search']
 		}
 	}
 });
