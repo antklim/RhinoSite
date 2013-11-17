@@ -137,6 +137,30 @@ RhinoIn.config(['$routeProvider', '$controllerProvider', '$compileProvider', '$f
 			}
 		});
 
+		$routeProvider.when('/signin', {
+			templateUrl: './partials/signin.html',
+			controller: 'SignInCtrl',
+			resolve: {
+			
+				load: ['$q', '$rootScope', function($q, $rootScope) {
+
+					var deferred = $q.defer();
+					var deps = [
+						'services/services',
+						'controllers/signin'
+					];
+
+					require(deps, function() {
+						$rootScope.$apply(function() {
+							deferred.resolve();
+						});
+					});
+
+					return deferred.promise;
+				}]
+			}
+		});
+
 		$routeProvider.otherwise({redirectTo: '/'});
 }]);
 

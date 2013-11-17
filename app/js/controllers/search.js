@@ -7,11 +7,11 @@ function SearchCtrl($scope, SiteLang, SearchForm) {
 
 	$scope.getPlaceholder = function() {
 		var lang = SiteLang.getLanguage();
-		return SearchForm.placeholder.name[ lang.key ];
+		return SearchForm.placeholders.search[ lang.key ];
 	};
 
 	$scope.getButtonName = function() {
 		var lang = SiteLang.getLanguage();
-		return SearchForm.buttons.search.name[ lang.key ];
+		return SearchForm.buttons.search[ lang.key ];
 	};
 }

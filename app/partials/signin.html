@@ -1,0 +1,27 @@
+<div class="container">
+  <form class="form-signin">
+    <h2 class="form-signin-heading">{{ getSignInLabel() }}</h2>
+    <input type="text" class="form-control" placeholder="{{ getEmailPH() }}" required="" autofocus="" autocomplete="off" ng-model="email">
+    <input type="password" class="form-control" placeholder="{{ getPasswordPH() }}" required="" autocomplete="off" ng-model="password">
+    <label class="checkbox">
+      <input type="checkbox" value="remember-me">&nbsp;{{ getRememberMe() }}
+    </label>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" hm-tap="signin()">{{ getSignInName() }}</button>
+  </form>
+  <div class="divider-signin">
+      <span class="divider-inner">OR</span>
+      <hr>
+  </div>
+  <!--<div class="divider"><span class="divider-inner">{{ getDivider() }}</span></div>-->
+  <form class="form-signin">
+    <h2 class="form-signin-heading">{{ getRegisterLabel() }}</h2>
+    <!--
+    <input type="text" class="form-control" placeholder="{{ getEmailPH() }}" required="" autofocus="" autocomplete="off" ng-model="email">
+    <input type="password" class="form-control" placeholder="{{ getPasswordPH() }}" required="" autocomplete="off" ng-model="password">
+    <label class="checkbox">
+      <input type="checkbox" value="remember-me">&nbsp;{{ getRememberMe() }}
+    </label>
+    -->
+    <button class="btn btn-lg btn-primary btn-block" type="submit" hm-tap="register()">{{ getRegisterName() }}</button>
+  </form>
+</div>

@@ -84,17 +84,59 @@ RhinoIn.value('SiteMap', {
 RhinoIn.value('SearchForm', {
 	'buttons': {
 		search: {
-			name: {
-				'ru': '\u041f\u043e\u0438\u0441\u043a',
-				'en': 'Search'
-			}
+			'ru': '\u041f\u043e\u0438\u0441\u043a',
+			'en': 'Search'
 		}
 	},
-	'placeholder': {
-		name: {
+	'placeholders': {
+		search: {
 			'ru': "\u041f\u043e\u0438\u0441\u043a\u0020\u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u043e\u0432...",
 			'en': "Search algorithms..."
 		}
 	},
+
+});
+
+RhinoIn.value('SignInForm', {
+
+	'buttons': {
+		signin: {
+			'ru': '\u0412\u043e\u0439\u0442\u0438',
+			'en': 'Sign In'
+		},
+		register: {
+			'ru': 'Zaregistririvatsa',
+			'en': 'Register'
+		}
+	},
+	'placeholders': {
+		email: {
+			'ru': "Email\u0020\u0430\u0434\u0440\u0435\u0441",
+			'en': "Email address"
+		},
+		password: {
+			'ru': "\u041f\u0430\u0440\u043e\u043b\u044c",
+			'en': "Password"
+		}
+	},
+
+	'labels': {
+		divider: {
+			'ru': "ILI",
+			'en': "OR"
+		},
+		signin: {
+			'ru': "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430\u002c\u0020\u0432\u043e\u0439\u0434\u0438\u0442\u0435",
+			'en': "Please sign in"
+		},
+		remember: {
+			'ru': "\u0417\u0430\u043f\u043e\u043c\u043d\u0438\u0442\u044c\u0020\u043c\u0435\u043d\u044f",
+			'en': "Remember me"
+		},
+		register: {
+			'ru': "Pojaluysta zaregistrirujtes",
+			'en': "Please register"
+		}
+	}
 
 });
