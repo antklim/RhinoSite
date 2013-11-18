@@ -140,3 +140,30 @@ RhinoIn.value('SignInForm', {
 	}
 
 });
+
+RhinoIn.value('ContactForm', {
+
+	'labels': {
+		companyName: {
+			'ru': "Rhino-in-Russia",
+			'en': "Rhino-in-Russia"
+		},
+		companyContactName: {
+			'ru': "Komanda RhinoIn",
+			'en': "RhinoIn Team"
+		},
+		companyAddress: {
+			'ru': ["28, 2nd Lugovaya Street", "Rostov on Don", "Russia"],
+			'en': ["28, 2nd Lugovaya Street", "Rostov on Don", "Russia"]
+		},
+		companyPhone: {
+			'ru': [{type: "M", phone: "+7(960)450-04-05", title: "Mobile"}],
+			'en': [{type: "M", phone: "+7(960)450-0405", title: "Mobile"}]
+		},
+		companyEmail: {
+			'ru': ["info@rhino-in.com"],
+			'en': ["info@rhino-in.com"]
+		}
+	}
+
+});
