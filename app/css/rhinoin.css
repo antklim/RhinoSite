@@ -45,34 +45,20 @@ body {
 }
 
 .divider-signin {
-  max-width: 330px;
-  padding: 15px;
-  margin: 0 auto;
-  text-align: center;
-}
-.divider .divider-inner {
-  display: inline-block;
-}
-.divider-inner:before,
-.divider-inner:after {
-  /*
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border: 0;
-  */
-  border-top: 1px solid #eeeeee;
-  display: block;
-  height: 1px;
-  content: " ";
-  width: 40%;
-  position: absolute;
-  color: #bbbbbb;
-}
-.divider-inner:after {
-  right: 0;
-  left: auto;
+  max-width: 300px;
+  margin:35px 0 10px 37%;
+  height:0;
+  text-align:center;
+  font-size:16px;
+  font-weight:normal;
+  color:#999999;
+  border-bottom:1px solid #ddd
 }
 
-.divider-signin hr {
-  border-top-color: #FF0000;
+.divider-signin .inner {
+  display:inline-block;
+  position:relative;
+  top:-10px;
+  padding:0 5px;
+  background:#fff
 }
