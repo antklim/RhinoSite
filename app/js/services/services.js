@@ -122,7 +122,7 @@ RhinoIn.value('SignInForm', {
 
 	'labels': {
 		divider: {
-			'ru': "ILI",
+			'ru': "\u0418\u041b\u0418",
 			'en': "OR"
 		},
 		signin: {
@@ -134,7 +134,7 @@ RhinoIn.value('SignInForm', {
 			'en': "Remember me"
 		},
 		register: {
-			'ru': "Pojaluysta zaregistrirujtes",
+			'ru': "\u0417\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u0443\u0439\u0442\u0435\u0441\u044c",
 			'en': "Please register"
 		}
 	}
