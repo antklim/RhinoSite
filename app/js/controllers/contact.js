@@ -1,4 +1,4 @@
-function ContactCtrl($scope, $sce, SiteLang, ContactForm) {
+function ContactCtrl($scope, $sce, SiteLang, ContactForm, SiteText) {
 	$scope.getCompanyName = function() {
 		var lang = SiteLang.getLanguage();
 		return $sce.trustAsHtml(ContactForm.labels.companyName[ lang.key ]);

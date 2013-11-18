@@ -23,6 +23,22 @@ RhinoIn.factory('SiteLang', [function(){
 	};
 }]);
 
+/*
+ * Returns any text for language and element
+ * element name: page.type.name
+ *	- page - page name of the element
+ *	- type - type of the element (buttons, labels, ...)
+ *	- name - element's name
+ */
+RhinoIn.factory('SiteText', ['SiteLang', function(SiteLang) {
+	return {
+		funcName: function(element) {
+			var lang = SiteLang.getLanguage();
+			return null;
+		}
+	};
+}]);
+
 RhinoIn.value('SiteMap', {
 	'default': {
 		location: '/home'
