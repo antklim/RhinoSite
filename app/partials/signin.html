@@ -16,7 +16,7 @@
   <form class="form-signin">
     <h2 class="form-signin-heading">{{ getRegisterLabel() }}</h2>
     
-    <input type="text" class="form-control" placeholder="{{ getEmailPH() }}" required="" autofocus="" autocomplete="off" ng-model="email">
+    <input type="text" class="form-control" placeholder="{{ getEmailPH() }}" required="" autocomplete="off" ng-model="email">
     <input type="password" class="form-control" placeholder="{{ getPasswordPH() }}" required="" autocomplete="off" ng-model="password">
     
     <button class="btn btn-lg btn-primary btn-block" type="submit" hm-tap="register()">{{ getRegisterName() }}</button>
