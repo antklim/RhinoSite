@@ -165,11 +165,12 @@ RhinoIn.value('ContactForm', {
 			'en': "Rhino-in-Russia"
 		},
 		companyContactName: {
-			'ru': "Komanda RhinoIn",
+			'ru': "\u041a\u043e\u043c\u0430\u043d\u0434\u0430\u0020RhinoIn",
 			'en': "RhinoIn Team"
 		},
 		companyAddress: {
-			'ru': ["28, 2nd Lugovaya Street", "Rostov on Don", "Russia"],
+			'ru': ["\u0443\u043b\u002e\u0020\u0032\u002d\u044f\u0020\u041b\u0443\u0433\u043e\u0432\u0430\u044f\u002c\u0020\u0032\u0038",
+					"\u0420\u043e\u0441\u0442\u043e\u0432\u002d\u043d\u0430\u002d\u0414\u043e\u043d\u0443", "\u0420\u043e\u0441\u0441\u0438\u044f"],
 			'en': ["28, 2nd Lugovaya Street", "Rostov on Don", "Russia"]
 		},
 		companyPhone: {
