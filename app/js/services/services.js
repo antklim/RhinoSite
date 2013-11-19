@@ -30,11 +30,33 @@ RhinoIn.factory('SiteLang', [function(){
  *	- type - type of the element (buttons, labels, ...)
  *	- name - element's name
  */
-RhinoIn.factory('SiteText', ['SiteLang', function(SiteLang) {
+RhinoIn.factory('SiteText', ['SiteLang', 'SearchForm', 'SignInForm', function(SiteLang, SearchForm, SignInForm) {	
+	var forms = {'search': SearchForm, 'signin': SignInForm};
+	var types = ['button', 'label', 'placeholder'];
+
 	return {
-		funcName: function(element) {
-			var lang = SiteLang.getLanguage();
-			return null;
+		getContent: function(element) {
+			if (!_.isString(element)) {
+				return null;
+			}
+
+			var arr = element.toLowerCase().split(".");
+			if (_.isUndefined(arr[0]) || _.isUndefined(arr[1]) || _.isUndefined(arr[2])) {
+				return null;
+			}
+
+			if (!_.has(forms, arr[0]) || _.indexOf(types, arr[1]) === -1) {
+				return null;
+			} else {
+				if (!_.has(forms[ arr[0] ][ arr[1] ], arr[2]) ) {
+					return null;
+				} else {
+					var lang = SiteLang.getLanguage();					
+					var content = forms[ arr[0] ][ arr[1] ][ arr[2] ][ lang.key ];
+
+					return (!_.isUndefined(content)) ? content :null;
+				}
+			}
 		}
 	};
 }]);
@@ -98,13 +120,13 @@ RhinoIn.value('SiteMap', {
 });
 
 RhinoIn.value('SearchForm', {
-	'buttons': {
+	'button': {
 		search: {
 			'ru': '\u041f\u043e\u0438\u0441\u043a',
 			'en': 'Search'
 		}
 	},
-	'placeholders': {
+	'placeholder': {
 		search: {
 			'ru': "\u041f\u043e\u0438\u0441\u043a\u0020\u0430\u043b\u0433\u043e\u0440\u0438\u0442\u043c\u043e\u0432...",
 			'en': "Search algorithms..."
@@ -115,7 +137,7 @@ RhinoIn.value('SearchForm', {
 
 RhinoIn.value('SignInForm', {
 
-	'buttons': {
+	'button': {
 		signin: {
 			'ru': '\u0412\u043e\u0439\u0442\u0438',
 			'en': 'Sign In'
@@ -125,7 +147,7 @@ RhinoIn.value('SignInForm', {
 			'en': 'Register'
 		}
 	},
-	'placeholders': {
+	'placeholder': {
 		email: {
 			'ru': "Email\u0020\u0430\u0434\u0440\u0435\u0441",
 			'en': "Email address"
@@ -136,7 +158,7 @@ RhinoIn.value('SignInForm', {
 		}
 	},
 
-	'labels': {
+	'label': {
 		divider: {
 			'ru': "\u0418\u041b\u0418",
 			'en': "OR"

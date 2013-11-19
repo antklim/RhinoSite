@@ -41,30 +41,30 @@ describe('service', function() {
 	describe('search form', function() {
 		it('should return search form settings', inject(function(SearchForm) {
 			expect(SearchForm).not.toBeUndefined();
-			expect(SearchForm.buttons).not.toBeUndefined();
-			expect(SearchForm.buttons.search).not.toBeUndefined();
+			expect(SearchForm.button).not.toBeUndefined();
+			expect(SearchForm.button.search).not.toBeUndefined();
 
-			expect(SearchForm.placeholders).not.toBeUndefined();
-			expect(SearchForm.placeholders.search).not.toBeUndefined();
+			expect(SearchForm.placeholder).not.toBeUndefined();
+			expect(SearchForm.placeholder.search).not.toBeUndefined();
 		}));
 	});
 
 	describe('sign in form', function() {
 		it('should return sign in form settings', inject(function(SignInForm) {
 			expect(SignInForm).not.toBeUndefined();
-			expect(SignInForm.buttons).not.toBeUndefined();
-			expect(SignInForm.buttons.signin).not.toBeUndefined();
-			expect(SignInForm.buttons.register).not.toBeUndefined();
+			expect(SignInForm.button).not.toBeUndefined();
+			expect(SignInForm.button.signin).not.toBeUndefined();
+			expect(SignInForm.button.register).not.toBeUndefined();
 
-			expect(SignInForm.placeholders).not.toBeUndefined();
-			expect(SignInForm.placeholders.email).not.toBeUndefined();
-			expect(SignInForm.placeholders.password).not.toBeUndefined();
+			expect(SignInForm.placeholder).not.toBeUndefined();
+			expect(SignInForm.placeholder.email).not.toBeUndefined();
+			expect(SignInForm.placeholder.password).not.toBeUndefined();
 
-			expect(SignInForm.labels).not.toBeUndefined();
-			expect(SignInForm.labels.divider).not.toBeUndefined();
-			expect(SignInForm.labels.signin).not.toBeUndefined();
-			expect(SignInForm.labels.remember).not.toBeUndefined();
-			expect(SignInForm.labels.register).not.toBeUndefined();
+			expect(SignInForm.label).not.toBeUndefined();
+			expect(SignInForm.label.divider).not.toBeUndefined();
+			expect(SignInForm.label.signin).not.toBeUndefined();
+			expect(SignInForm.label.remember).not.toBeUndefined();
+			expect(SignInForm.label.register).not.toBeUndefined();
 		}));
 	});
 

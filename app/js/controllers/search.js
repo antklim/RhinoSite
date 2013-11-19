@@ -1,4 +1,4 @@
-function SearchCtrl($scope, SiteLang, SearchForm) {
+function SearchCtrl($scope, SiteText) {
 	$scope.searchFor = "";
 
 	$scope.search = function() {
@@ -6,12 +6,10 @@ function SearchCtrl($scope, SiteLang, SearchForm) {
 	};
 
 	$scope.getPlaceholder = function() {
-		var lang = SiteLang.getLanguage();
-		return SearchForm.placeholders.search[ lang.key ];
+		return SiteText.getContent("search.placeholder.search");
 	};
 
 	$scope.getButtonName = function() {
-		var lang = SiteLang.getLanguage();
-		return SearchForm.buttons.search[ lang.key ];
+		return SiteText.getContent("search.button.search");
 	};
 }

@@ -1,38 +1,6 @@
 <div ng-switch on="getLanguage()">
 
 <div ng-switch-when="en">
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-  <div class="container">
-    <h1>About Page</h1>
-    <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-    <p><a class="btn btn-primary btn-lg" role="button">Learn more »</a></p>
-  </div>
-</div>
-
-<div class="container">
-  <!-- Example row of columns -->
-  <div class="row">
-    <div class="col-md-4">
-      <h2>Heading</h2>
-      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-      <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-    </div>
-    <div class="col-md-4">
-      <h2>Heading</h2>
-      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-      <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-   </div>
-    <div class="col-md-4">
-      <h2>Heading</h2>
-      <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-      <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-    </div>
-  </div>
-</div> <!-- /container -->
-</div> <!-- EN languauge -->
-
-<div ng-switch-when="ru">
 <div class="container bs-docs-container">
       <div class="row">
         <div class="col-md-3">
@@ -45,7 +13,7 @@
                   <a href="#team">Our team</a>
                 </li>
                 <li>
-                  <a href="#community">Contact Us</a>
+                  <a href="#community">Contact</a>
                 </li>
             </ul>
           </div>
@@ -98,7 +66,7 @@
         <!-- Contact Us ================================================== -->
         <div class="bs-docs-section">
           <div class="page-header">
-            <h1 id="community">Contact Us</h1>
+            <h1 id="community">Contact</h1>
           </div>
           <address>
             <strong>Postal Address</strong><br>
@@ -111,11 +79,104 @@
             <abbr title="Mobile">M:</abbr>+7(960)450-0405<br>
           </address>
           <address>
-            <strong>General Info e-mail</strong><br>
+            <strong>General info e-mail</strong><br>
             <a href='mailto:info@rhino-in.com'>info@rhino-in.com</a><br>
           </address>
           <address>
-            <strong>Technical Issues e-mail</strong><br>
+            <strong>Technical issues e-mail</strong><br>
+            <a href='mailto:support@rhino-in.com'>support@rhino-in.com</a><br>
+          </address>
+        </div>
+        </div>
+      </div>
+
+    </div>
+</div> <!-- EN languauge -->
+
+<div ng-switch-when="ru">
+<div class="container bs-docs-container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="bs-sidebar hidden-print affix-top" role="complementary">
+            <ul class="nav bs-sidenav">
+                <li class="active">
+                  <a href="#history">About Rhino</a>
+                </li>
+                <li class="">
+                  <a href="#team">Our team</a>
+                </li>
+                <li>
+                  <a href="#community">Contact</a>
+                </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-9" role="main">
+        <!-- About RhinoIn ================================================== -->
+        <div class="bs-docs-section">
+          <div class="page-header">
+            <h1 id="history">About Rhino</h1>
+          </div>
+          <p class="lead">Originally created by a designer and a developer at Twitter, Bootstrap has become one of the most popular front-end frameworks and open source projects in the world.</p>
+          <p>BLA BLA BLA.</p>
+        </div>
+
+        <!-- Our Team ================================================== -->
+        <div class="bs-docs-section">
+          <div class="page-header">
+            <h1 id="team">Our team</h1>
+          </div>
+          <p class="lead">Bootstrap is maintained by the founding team and a small group of invaluable core contributors, with the massive support and involvement of our community.</p>
+          <div class="list-group bs-team">
+            <div class="list-group-item">
+              <!-- AS Example
+              <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=mdo&amp;type=follow"></iframe>
+              -->
+              <iframe class="github-btn" src=""></iframe>
+              <a class="team-member" href="https://github.com/demin">
+                <img src="#" alt="@demin">
+                <strong>Dimitry Demin</strong> <small>@demin</small>
+              </a>
+            </div>
+            <div class="list-group-item">
+              <iframe class="github-btn" src=""></iframe>
+              <a class="team-member" href="https://github.com/petrov">
+                <img src="#" alt="@petrov">
+                <strong>Denis Petrov</strong> <small>@petrov</small>
+              </a>
+            </div>
+            <div class="list-group-item">
+              <iframe class="github-btn" src=""></iframe>
+              <a class="team-member" href="https://github.com/antklim">
+                <img src="#" alt="@antklim">
+                <strong>Anton Klimenko</strong><small>@antklim</small>
+              </a>
+            </div>
+          </div>
+          <p>Get involved with RhinoIn development by <!--<a href="https://github.com/twbs/bootstrap/issues/new">-->opening an issue<!--</a>--> or submitting a pull request.</p>
+        </div>
+
+        <!-- Contact ================================================== -->
+        <div class="bs-docs-section">
+          <div class="page-header">
+            <h1 id="community">Contact</h1>
+          </div>
+          <address>
+            <strong>Postal Address</strong><br>
+            28, 2nd Lugovaya Street<br />
+            Rostov on Don<br />
+            Russia <br />
+          </address>
+          <address>
+            <strong>Phones</strong><br>
+            <abbr title="Mobile">M:</abbr>+7(960)450-0405<br>
+          </address>
+          <address>
+            <strong>General info e-mail</strong><br>
+            <a href='mailto:info@rhino-in.com'>info@rhino-in.com</a><br>
+          </address>
+          <address>
+            <strong>Technical issues e-mail</strong><br>
             <a href='mailto:support@rhino-in.com'>support@rhino-in.com</a><br>
           </address>
         </div>

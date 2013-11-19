@@ -1,48 +1,41 @@
-function SignInCtrl($scope, SiteLang, SignInForm) {
+function SignInCtrl($scope, SiteText) {
 	$scope.email = "";
 	$scope.password = "";
 
 	$scope.getDivider = function() {
-		var lang = SiteLang.getLanguage();
-		return SignInForm.labels.divider[ lang.key ];
+		return SiteText.getContent("signin.label.divider");
 	};
 
 	$scope.getEmailPH = function() {
-		var lang = SiteLang.getLanguage();
-		return SignInForm.placeholders.email[ lang.key ];
+		return SiteText.getContent("signin.placeholder.email");
 	};
 
 	$scope.getPasswordPH = function() {
-		var lang = SiteLang.getLanguage();
-		return SignInForm.placeholders.password[ lang.key ];
+		return SiteText.getContent("signin.placeholder.password");
 	};
 
 	$scope.getSignInName = function() {
-		var lang = SiteLang.getLanguage();
-		return SignInForm.buttons.signin[ lang.key ];
+		return SiteText.getContent("signin.button.signin");
 	};
 
 	$scope.getRegisterName = function() {
-		var lang = SiteLang.getLanguage();
-		return SignInForm.buttons.register[ lang.key ];
+		return SiteText.getContent("signin.button.register");
 	};
 
 	$scope.getSignInLabel = function() {
-		var lang = SiteLang.getLanguage();
-		return SignInForm.labels.signin[ lang.key ];
+		return SiteText.getContent("signin.label.signin");
 	};
 
 	$scope.getRememberMe = function() {
-		var lang = SiteLang.getLanguage();
-		return SignInForm.labels.remember[ lang.key ];
+		return SiteText.getContent("signin.label.remember");
 	};
 
 	$scope.getRegisterLabel = function() {
-		var lang = SiteLang.getLanguage();
-		return SignInForm.labels.register[ lang.key ];
+		return SiteText.getContent("signin.label.register");
 	};
 
 	$scope.signin = function() {
 		console.log($scope.email, $scope.password);
+
 	};
 }
