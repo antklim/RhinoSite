@@ -68,14 +68,14 @@ describe('service', function() {
 		}));
 	});
 
-	describe('contact form', function() {
-		it('should return contact form settings', inject(function(ContactForm) {
-			expect(ContactForm.labels).not.toBeUndefined();
-			expect(ContactForm.labels.companyName).not.toBeUndefined();
-			expect(ContactForm.labels.companyContactName).not.toBeUndefined();
-			expect(ContactForm.labels.companyAddress).not.toBeUndefined();
-			expect(ContactForm.labels.companyPhone).not.toBeUndefined();
-			expect(ContactForm.labels.companyEmail).not.toBeUndefined();
+	describe('about form', function() {
+		it('should return about form settings', inject(function(AboutForm) {
+			expect(AboutForm.label).not.toBeUndefined();
+			expect(AboutForm.label.postal).not.toBeUndefined();
+			expect(AboutForm.label.phones).not.toBeUndefined();
+			expect(AboutForm.label.company_address).not.toBeUndefined();
+			expect(AboutForm.label.company_phones).not.toBeUndefined();
+			expect(AboutForm.label.company_emails).not.toBeUndefined();
 		}));
 	});
 });

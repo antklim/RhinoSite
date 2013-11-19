@@ -30,8 +30,9 @@ RhinoIn.factory('SiteLang', [function(){
  *	- type - type of the element (buttons, labels, ...)
  *	- name - element's name
  */
-RhinoIn.factory('SiteText', ['SiteLang', 'SearchForm', 'SignInForm', function(SiteLang, SearchForm, SignInForm) {	
-	var forms = {'search': SearchForm, 'signin': SignInForm};
+RhinoIn.factory('SiteText', ['SiteLang', 'SearchForm', 'SignInForm', 'AboutForm',
+		function(SiteLang, SearchForm, SignInForm, AboutForm) {
+	var forms = {'search': SearchForm, 'signin': SignInForm, 'about': AboutForm};
 	var types = ['button', 'label', 'placeholder'];
 
 	return {
@@ -179,29 +180,29 @@ RhinoIn.value('SignInForm', {
 
 });
 
-RhinoIn.value('ContactForm', {
+RhinoIn.value('AboutForm', {
 
-	'labels': {
-		companyName: {
-			'ru': "Rhino-in-Russia",
-			'en': "Rhino-in-Russia"
+	'label': {
+		postal: {
+			'ru': "Pochtoviy adres",
+			'en': "Postal Address"
 		},
-		companyContactName: {
-			'ru': "\u041a\u043e\u043c\u0430\u043d\u0434\u0430\u0020RhinoIn",
-			'en': "RhinoIn Team"
+		phones: {
+			'ru': "Telefoni",
+			'en': "Phones"
 		},
-		companyAddress: {
+		company_address: {
 			'ru': ["\u0443\u043b\u002e\u0020\u0032\u002d\u044f\u0020\u041b\u0443\u0433\u043e\u0432\u0430\u044f\u002c\u0020\u0032\u0038",
 					"\u0420\u043e\u0441\u0442\u043e\u0432\u002d\u043d\u0430\u002d\u0414\u043e\u043d\u0443", "\u0420\u043e\u0441\u0441\u0438\u044f"],
 			'en': ["28, 2nd Lugovaya Street", "Rostov on Don", "Russia"]
 		},
-		companyPhone: {
-			'ru': [{type: "M", phone: "+7(960)450-04-05", title: "Mobile"}],
+		company_phones: {
+			'ru': [{type: "M", phone: "+7(960)450-04-05", title: "Mobilniy"}],
 			'en': [{type: "M", phone: "+7(960)450-0405", title: "Mobile"}]
 		},
-		companyEmail: {
-			'ru': ["info@rhino-in.com"],
-			'en': ["info@rhino-in.com"]
+		company_emails: {
+			'ru': [{email: "info@rhino-in.com", title: "Obshaya informaciya"}, {email: "support@rhino-in.com", title: "Tehnicheskie voprosi"}],
+			'en': [{email: "info@rhino-in.com", title: "General info"}, {email: "support@rhino-in.com", title: "Technical issues"}]
 		}
 	}
 
