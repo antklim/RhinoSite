@@ -6,9 +6,16 @@ function NavCtrl($scope, $location, SiteMap, SiteLang, SiteLangList) {
 
 	$scope.nav = function(item) {
 		if (_.has(SiteMap, item)) {
+			if (_.isUndefined(SiteMap[ item ].hash)) {
+				$location.hash("");
+			} else {
+				$location.hash(SiteMap[ item ].hash);
+			}
+			
 			$location.path(SiteMap[ item ].location);
 			$scope.activeItem = item;
 		} else {
+			$location.hash("");
 			$location.path(SiteMap[ 'default' ].location);
 			$scope.activeItem = 'home';
 		}

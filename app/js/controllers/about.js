@@ -1,4 +1,11 @@
-function AboutCtrl($scope, $sce, SiteText) {
+function AboutCtrl($scope, $sce, $location, $anchorScroll, SiteText) {
+	$scope.anchorPrefix = "about-";
+
+	$scope.anchor = function(hash) {
+		$location.hash($scope.anchorPrefix + hash);
+		$anchorScroll();
+	};
+
 	// Contact part
 	$scope.getPostal = function() {
 		return SiteText.getContent("about.label.postal");

@@ -104,7 +104,8 @@ RhinoIn.value('SiteMap', {
 
 	'contact':
 		{
-			location: '/contact',
+			location: '/about',
+			hash: 'about-contact',
 			name: {
 				'ru': '\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u044b',
 				'en': 'Contact'
