@@ -1,7 +1,9 @@
 function AboutCtrl($scope, $sce, $location, $anchorScroll, SiteText) {
+	$scope.activeItem = 'rhino';
 	$scope.anchorPrefix = "about-";
 
-	$scope.anchor = function(hash) {
+	$scope.anchor = function(item) {
+		$scope.activeItem = item;
 		//$location.hash($scope.anchorPrefix + hash);
 		//$anchorScroll();
 	};

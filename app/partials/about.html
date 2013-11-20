@@ -1,21 +1,23 @@
-<div class="container">
+<div class="container bs-docs-container">
   <div class="row">
-    <div class="col-md-2">
-      <ul class="nav">
-          <li class="">
+    <div class="col-md-3">
+      <div class="bs-sidebar hidden-print affix-top" role="complementary">
+      <ul class="nav bs-sidenav">  <!--nav-pills nav-stacked">-->
+          <li class='{{ activeItem == "rhino" && "active" || "" }}'>
             <a href hm-tap='anchor("rhino")'>{{ getAboutRhino() }}</a>
           </li>
-          <li class="">
+          <li class='{{ activeItem == "team" && "active" || "" }}'>
             <a href hm-tap='anchor("team")'>{{ getOurTeam() }}</a>
           </li>
-          <li>
+          <li class='{{ activeItem == "contact" && "active" || "" }}'>
             <a href hm-tap='anchor("contact")'>{{ getContact() }}</a>
           </li>
       </ul>
     </div>
-    <div class="col-md-10" role="main">
+    </div>
+    <div class="col-md-9" role="main">
       <!-- About RhinoIn ================================================== -->
-      <div class="">
+      <div class="bs-docs-section">
         <div class="page-header">
           <h1 id="about-rhino">{{ getAboutRhino() }}</h1>
         </div>
@@ -24,7 +26,7 @@
       </div>
 
       <!-- Our Team ================================================== -->
-      <div class="">
+      <div class="bs-docs-section">
         <div class="page-header">
           <h1 id="about-team">{{ getOurTeam() }}</h1>
         </div>
@@ -59,7 +61,7 @@
       </div>
 
       <!-- Contact ================================================== -->
-      <div class="">
+      <div class="bs-docs-section">
         <div class="page-header">
           <h1 id="about-contact">{{ getContact() }}</h1>
         </div>
