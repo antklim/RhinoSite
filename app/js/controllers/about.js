@@ -2,11 +2,23 @@ function AboutCtrl($scope, $sce, $location, $anchorScroll, SiteText) {
 	$scope.anchorPrefix = "about-";
 
 	$scope.anchor = function(hash) {
-		$location.hash($scope.anchorPrefix + hash);
-		$anchorScroll();
+		//$location.hash($scope.anchorPrefix + hash);
+		//$anchorScroll();
 	};
 
 	// Contact part
+	$scope.getAboutRhino = function() {
+		return SiteText.getContent("about.label.about_rhino");
+	};
+
+	$scope.getOurTeam = function() {
+		return SiteText.getContent("about.label.our_team");
+	};
+
+	$scope.getContact = function() {
+		return SiteText.getContent("about.label.contact");
+	};
+
 	$scope.getPostal = function() {
 		return SiteText.getContent("about.label.postal");
 	};

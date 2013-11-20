@@ -1,58 +1,56 @@
-<div class="container bs-docs-container">
+<div class="container">
   <div class="row">
-    <div class="col-md-3">
-      <div class="bs-sidebar hidden-print affix-top" role="complementary">
-        <ul class="nav bs-sidenav">
-            <li class="active">
-              <a href hm-tap='anchor("rhino")'>About Rhino</a>
-            </li>
-            <li class="">
-              <a href hm-tap='anchor("team")'>Our team</a>
-            </li>
-            <li>
-              <a href hm-tap='anchor("contact")'>Contact</a>
-            </li>
-        </ul>
-      </div>
+    <div class="col-md-2">
+      <ul class="nav">
+          <li class="">
+            <a href hm-tap='anchor("rhino")'>{{ getAboutRhino() }}</a>
+          </li>
+          <li class="">
+            <a href hm-tap='anchor("team")'>{{ getOurTeam() }}</a>
+          </li>
+          <li>
+            <a href hm-tap='anchor("contact")'>{{ getContact() }}</a>
+          </li>
+      </ul>
     </div>
-    <div class="col-md-9" role="main">
+    <div class="col-md-10" role="main">
       <!-- About RhinoIn ================================================== -->
-      <div class="bs-docs-section">
+      <div class="">
         <div class="page-header">
-          <h1 id="about-rhino">About Rhino</h1>
+          <h1 id="about-rhino">{{ getAboutRhino() }}</h1>
         </div>
-        <p class="lead">Originally created by a designer and a developer at Twitter, Bootstrap has become one of the most popular front-end frameworks and open source projects in the world.</p>
+        <p class="lead">Originally created by a designer and a developer at Twitter, RhinoIn has become one of the most popular front-end frameworks and open source projects in the world.</p>
         <p>BLA BLA BLA.</p>
       </div>
 
       <!-- Our Team ================================================== -->
-      <div class="bs-docs-section">
+      <div class="">
         <div class="page-header">
-          <h1 id="about-team">Our team</h1>
+          <h1 id="about-team">{{ getOurTeam() }}</h1>
         </div>
-        <p class="lead">Bootstrap is maintained by the founding team and a small group of invaluable core contributors, with the massive support and involvement of our community.</p>
-        <div class="list-group bs-team">
+        <p class="lead">RhinoIn is maintained by the founding team and a small group of invaluable core contributors, with the massive support and involvement of our community.</p>
+        <div class="list-group rhino-team">
           <div class="list-group-item">
             <!-- AS Example
             <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=mdo&amp;type=follow"></iframe>
             -->
             <iframe class="github-btn" src=""></iframe>
-            <a class="team-member" href="https://github.com/demin">
+            <a class="" href="https://github.com/demin">
               <img src="#" alt="@demin">
               <strong>Dimitry Demin</strong> <small>@demin</small>
             </a>
           </div>
           <div class="list-group-item">
             <iframe class="github-btn" src=""></iframe>
-            <a class="team-member" href="https://github.com/petrov">
+            <a class="" href="https://github.com/petrov">
               <img src="#" alt="@petrov">
               <strong>Denis Petrov</strong> <small>@petrov</small>
             </a>
           </div>
           <div class="list-group-item">
-            <iframe class="github-btn" src=""></iframe>
-            <a class="team-member" href="https://github.com/antklim">
-              <img src="#" alt="@antklim">
+            <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=antklim&amp;type=follow"></iframe>
+            <a class="" href="https://github.com/antklim">
+              <img src="http://www.gravatar.com/avatar/cf322dc6747f2ce32a22bc6d28458f78" alt="@antklim">
               <strong>Anton Klimenko</strong> <small>@antklim</small>
             </a>
           </div>
@@ -61,9 +59,9 @@
       </div>
 
       <!-- Contact ================================================== -->
-      <div class="bs-docs-section">
+      <div class="">
         <div class="page-header">
-          <h1 id="about-contact">Contact</h1>
+          <h1 id="about-contact">{{ getContact() }}</h1>
         </div>
         <address>
           <strong>{{ getPostal() }}</strong><br>
