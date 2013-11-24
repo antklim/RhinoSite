@@ -113,7 +113,29 @@ RhinoIn.config(['$routeProvider', '$controllerProvider', '$compileProvider', '$f
 			}
 		});
 
-		$routeProvider.when('/contact', {redirectTo: '/about'});
+		$routeProvider.when('/contact', {
+			templateUrl: './partials/contact.html',
+			controller: 'ContactCtrl',
+			resolve: {
+			
+				load: ['$q', '$rootScope', function($q, $rootScope) {
+
+					var deferred = $q.defer();
+					var deps = [
+						'services/services',
+						'controllers/contact'
+					];
+
+					require(deps, function() {
+						$rootScope.$apply(function() {
+							deferred.resolve();
+						});
+					});
+
+					return deferred.promise;
+				}]
+			}
+		});
 
 		$routeProvider.when('/signin', {
 			templateUrl: './partials/signin.html',

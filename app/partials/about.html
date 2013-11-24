@@ -21,9 +21,7 @@
         <div class="page-header">
           <h1 id="about-rhino">{{ getAboutRhino() }}</h1>
         </div>
-        <!--<p class="lead">Originally created by a designer and a developer at Twitter, RhinoIn has become one of the most popular front-end frameworks and open source projects in the world.</p>-->
-        <p class="lead">Originally created by a BLA BLA BLA</p>
-        <p>BLA BLA BLA.</p>
+        <div ng-bind-html="getAboutRhinoText()"></div>
       </div>
 
       <!-- Our Team ================================================== -->
@@ -32,20 +30,18 @@
           <h1 id="about-team">{{ getOurTeam() }}</h1>
         </div>
         <!--<p class="lead">RhinoIn is maintained by the founding team and a small group of invaluable core contributors, with the massive support and involvement of our community.</p>-->
-        <p class="lead">RhinoIn is maintained by BLA BLA.</p>
+        <!--<p class="lead">RhinoIn is maintained by BLA BLA.</p>-->
+        <div ng-bind-html="getOurTeamText()"></div>
         <div class="list-group rhino-team">
           <div class="list-group-item">
-            <!-- AS Example
-            <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=mdo&amp;type=follow"></iframe>
-            -->
-            <iframe class="github-btn" src=""></iframe>
+            <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=demin&amp;type=follow"></iframe>
             <a class="" href="https://github.com/demin">
               <img src="#" alt="@demin">
               <strong>Dimitry Demin</strong> <small>@demin</small>
             </a>
           </div>
           <div class="list-group-item">
-            <iframe class="github-btn" src=""></iframe>
+            <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=petrov&amp;type=follow"></iframe>
             <a class="" href="https://github.com/petrov">
               <img src="#" alt="@petrov">
               <strong>Denis Petrov</strong> <small>@petrov</small>
@@ -54,12 +50,11 @@
           <div class="list-group-item">
             <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=antklim&amp;type=follow"></iframe>
             <a class="" href="https://github.com/antklim">
-              <img src="http://www.gravatar.com/avatar/cf322dc6747f2ce32a22bc6d28458f78" alt="@antklim">
+              <img src="#" alt="@antklim">
               <strong>Anton Klimenko</strong> <small>@antklim</small>
             </a>
           </div>
         </div>
-        <p>Get involved with RhinoIn development by <!--<a href="https://github.com/twbs/bootstrap/issues/new">-->opening an issue<!--</a>--> or submitting a pull request.</p>
       </div>
 
       <!-- Contact ================================================== -->
@@ -67,15 +62,32 @@
         <div class="page-header">
           <h1 id="about-contact">{{ getContact() }}</h1>
         </div>
-        <address>
-          <strong>{{ getPostal() }}</strong><br>
-          <div ng-bind-html="getCompanyAddress()"></div>
-        </address>
-        <address>
-          <strong>{{ getPhones() }}</strong><br>
-          <div ng-bind-html="getCompanyPhones()"></div>
-        </address>
-        <div ng-bind-html="getCompanyEmails()"></div>
+        <div class="row">
+          <div class="col-md-9">
+
+            <form role="form">
+              <div ng-bind-html="getEnterEmail()"></div>
+              <div ng-bind-html="getEnterSubject()"></div>
+              <div ng-bind-html="getMessage()"></div>
+              <button type="submit" class="btn btn-default" id="message">{{ getSendEmail() }}</button>
+            </form>
+
+          </div>
+          <div class="col-md-3">
+
+            <address>
+              <strong>{{ getPostal() }}</strong><br>
+              <div ng-bind-html="getCompanyAddress()"></div>
+            </address>
+            <address>
+              <strong>{{ getPhones() }}</strong><br>
+              <div ng-bind-html="getCompanyPhones()"></div>
+            </address>
+            <div ng-bind-html="getCompanyEmails()"></div>
+
+          </div>
+        </div>
+
       </div>
     </div>
   </div>

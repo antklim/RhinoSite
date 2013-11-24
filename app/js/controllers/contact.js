@@ -1,43 +1,4 @@
-function AboutCtrl($scope, $sce, $location, $anchorScroll, SiteText) {
-	$scope.activeItem = 'rhino';
-	$scope.anchorPrefix = "about-";
-
-	$scope.anchor = function(item) {
-		$scope.activeItem = item;
-		//$location.hash($scope.anchorPrefix + hash);
-		//$anchorScroll();
-	};
-
-	$scope.getAboutRhino = function() {
-		return SiteText.getContent("about.label.about_rhino");
-	};
-
-	$scope.getAboutRhinoText = function() {
-		var head = SiteText.getContent("about.text.about_rhino_head"),
-			body = SiteText.getContent("about.text.about_rhino_body");
-		var res = "";
-		var tpl = "<p class='lead'>__HEAD__</p><p>__BODY__</p>";
-
-		res += tpl.replace(/__HEAD__/g, head).replace(/__BODY__/g, body);
-
-		return $sce.trustAsHtml(res);
-	};
-
-	$scope.getOurTeam = function() {
-		return SiteText.getContent("about.label.our_team");
-	};
-
-	$scope.getOurTeamText = function() {
-		var head = SiteText.getContent("about.text.our_team_head"),
-			body = SiteText.getContent("about.text.our_team_body");
-		var res = "";
-		var tpl = "<p class='lead'>__HEAD__</p><p>__BODY__</p>";
-
-		res += tpl.replace(/__HEAD__/g, head).replace(/__BODY__/g, body);
-
-		return $sce.trustAsHtml(res);
-	};
-
+function ContactCtrl($scope, $sce, SiteText) {
 	$scope.getContact = function() {
 		return SiteText.getContent("about.label.contact");
 	};

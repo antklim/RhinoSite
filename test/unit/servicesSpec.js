@@ -70,12 +70,22 @@ describe('service', function() {
 
 	describe('about form', function() {
 		it('should return about form settings', inject(function(AboutForm) {
+			expect(AboutForm.button).not.toBeUndefined();
+			expect(AboutForm.button.send_email).not.toBeUndefined();
+
+			expect(AboutForm.placeholder).not.toBeUndefined();
+			expect(AboutForm.placeholder.enter_email).not.toBeUndefined();
+			expect(AboutForm.placeholder.enter_subject).not.toBeUndefined();
+
 			expect(AboutForm.label).not.toBeUndefined();
 			expect(AboutForm.label.postal).not.toBeUndefined();
 			expect(AboutForm.label.phones).not.toBeUndefined();
 			expect(AboutForm.label.company_address).not.toBeUndefined();
 			expect(AboutForm.label.company_phones).not.toBeUndefined();
 			expect(AboutForm.label.company_emails).not.toBeUndefined();
+			expect(AboutForm.label.enter_email).not.toBeUndefined();
+			expect(AboutForm.label.enter_subject).not.toBeUndefined();
+			expect(AboutForm.label.message).not.toBeUndefined();
 		}));
 	});
 });
