@@ -30,9 +30,9 @@ RhinoIn.factory('SiteLang', [function(){
  *	- type - type of the element (buttons, labels, ...)
  *	- name - element's name
  */
-RhinoIn.factory('SiteText', ['SiteLang', 'SearchForm', 'SignInForm', 'AboutForm',
-		function(SiteLang, SearchForm, SignInForm, AboutForm) {
-	var forms = {'search': SearchForm, 'signin': SignInForm, 'about': AboutForm};
+RhinoIn.factory('SiteText', ['SiteLang', 'SearchForm', 'SignInForm', 'AboutForm', 'ProductsForm',
+		function(SiteLang, SearchForm, SignInForm, AboutForm, ProductsForm) {
+	var forms = {'search': SearchForm, 'signin': SignInForm, 'about': AboutForm, 'products': ProductsForm};
 	var types = ['button', 'label', 'placeholder', 'text'];
 
 	return {
@@ -265,6 +265,39 @@ RhinoIn.value('AboutForm', {
 		our_team_members: {
 			'ru': "",
 			'en': ""
+		}
+	}
+});
+
+RhinoIn.value('ProductsForm', {
+	'label': {
+		products: {
+			'ru': "\u041F\u0440\u043E\u0434\u0443\u043A\u0442\u044B",
+			'en': "Products",
+		},
+		plugins: {
+			'ru': "\u041d\u0430\u0448\u0438\u0020plug-ins",
+			'en': "Our plug-ins",
+		}
+	},
+	'text': {
+		products_head: {
+			'ru': "\u041D\u0430\u0448\u0430\u0020\u043E\u0440\u0433\u0430\u043D\u0438\u0437\u0430\u0446\u0438\u044F\u0020\u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F\u0020\u043E\u0444\u0438\u0446\u0438\u0430\u043B\u044C\u043D\u044B\u043C\u0020\u0440\u0435\u0441\u0435\u0439\u043B\u0435\u0440\u043E\u043C\u0020\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u044B\u0020\u0052\u0068\u0069\u006E\u006F\u0020\u0432\u0020\u0420\u043E\u0441\u0441\u0438\u0438\u002E",
+			'en': "Our company is the official reseller specialising in Rhino products in Russian Federation.",
+		},
+		products_body: {
+			'ru': ["\u041A\u0440\u043E\u043C\u0435\u0020\u0441\u0430\u043C\u043E\u0439\u0020\u043F\u043B\u0430\u0442\u0444\u043E\u0440\u043C\u044B\u0020\u043C\u044B\u0020\u043F\u0440\u0435\u0434\u043B\u0430\u0433\u0430\u0435\u043C\u0020\u0442\u0430\u043A\u0436\u0435\u0020\u0440\u0430\u0437\u043B\u0438\u0447\u043D\u044B\u0435\u0020\u043F\u043B\u0430\u0433\u0438\u043D\u044B\u0020\u043A\u0020\u044D\u0442\u043E\u0439\u0020\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0435\u002E",
+					"\u0412\u044B\u0020\u043C\u043E\u0436\u0435\u0442\u0435\u0020\u043F\u0440\u0438\u043E\u0431\u0440\u0435\u0441\u0442\u0438\u0020\u0052\u0068\u0069\u006E\u006F\u0020\u0438\u0020\u0437\u0430\u043A\u0430\u0437\u0430\u0442\u044C\u0020\u043F\u043B\u0430\u0433\u0438\u043D\u044B\u002C\u0020<a href='#contact' hm-tap='contact()'>\u0441\u0432\u044F\u0437\u0430\u0432\u0448\u0438\u0441\u044C</a>\u0020\u0441\u0020\u043D\u0430\u043C\u0438\u002E"],
+			'en': ["Besides Rhino products we also offer you a wide variety of plug-ins for Rhino.",
+					"You can buy Rhino or order plug-in just <a href='#contact' hm-tap='contact()'>contact us</a>."],
+		},
+		plugins_head: {
+			'ru': "\u0414\u0430\u043B\u0435\u0435\u0020\u0432\u044B\u0020\u043C\u043E\u0436\u0435\u0442\u0435\u0020\u043F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C\u0020\u0438\u0020\u0441\u043A\u0430\u0447\u0430\u0442\u044C\u0020\u043D\u0430\u0448\u0438\u0020plug-ins\u002E",
+			'en': "Further you can find and download our plug-ins.",
+		},
+		plugins_body: {
+			'ru': "\u0417\u0434\u0435\u0441\u044C\u0020\u0431\u0443\u0434\u0435\u0442\u0020\u0441\u043F\u0438\u0441\u043E\u043A\u0020plug-ins",
+			'en': "The list of plug-ins will be here",
 		}
 	}
 });

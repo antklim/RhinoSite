@@ -86,6 +86,27 @@ describe('service', function() {
 			expect(AboutForm.label.enter_email).not.toBeUndefined();
 			expect(AboutForm.label.enter_subject).not.toBeUndefined();
 			expect(AboutForm.label.message).not.toBeUndefined();
+
+			expect(AboutForm.text).not.toBeUndefined();
+			expect(AboutForm.text.about_rhino_head).not.toBeUndefined();
+			expect(AboutForm.text.about_rhino_body).not.toBeUndefined();
+			expect(AboutForm.text.our_team_head).not.toBeUndefined();
+			expect(AboutForm.text.our_team_body).not.toBeUndefined();
+			expect(AboutForm.text.our_team_members).not.toBeUndefined();
+		}));
+	});
+
+	describe('products form', function() {
+		it('should return products form settings', inject(function(ProductsForm) {
+			expect(ProductsForm.label).not.toBeUndefined();
+			expect(ProductsForm.label.products).not.toBeUndefined();
+			expect(ProductsForm.label.plugins).not.toBeUndefined();
+
+			expect(ProductsForm.text).not.toBeUndefined();
+			expect(ProductsForm.text.products_head).not.toBeUndefined();
+			expect(ProductsForm.text.products_body).not.toBeUndefined();
+			expect(ProductsForm.text.plugins_head).not.toBeUndefined();
+			expect(ProductsForm.text.plugins_body).not.toBeUndefined();
 		}));
 	});
 });

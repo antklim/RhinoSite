@@ -1,41 +1,61 @@
-<div ng-switch on="getLanguage()">
-
-<div ng-switch-when="en">
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-  <div class="container">
-    <h1>Products Page</h1>
-    <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-    <p><a class="btn btn-primary btn-lg" role="button">Learn more »</a></p>
-  </div>
-</div>
-
-<div class="container">
-  <!-- Example row of columns -->
+<div class="container bs-docs-container">
   <div class="row">
-    <div class="col-md-4">
-      <h2>Heading</h2>
-      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-      <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+    <div class="col-md-2">
+      <div class="bs-sidebar hidden-print affix-top" role="complementary">
+      <ul class="nav bs-sidenav">
+          <li class='{{ activeItem == "products" && "active" || "" }}'>
+            <a href hm-tap='anchor("products")'>{{ getProducts() }}</a>
+          </li>
+          <li class='{{ activeItem == "plugins" && "active" || "" }}'>
+            <a href hm-tap='anchor("plugins")'>{{ getOurPlugins() }}</a>
+          </li>
+      </ul>
     </div>
-    <div class="col-md-4">
-      <h2>Heading</h2>
-      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-      <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-   </div>
-    <div class="col-md-4">
-      <h2>Heading</h2>
-      <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-      <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
     </div>
-  </div>
-</div> <!-- /container -->
-</div> <!-- EN languauge -->
+    <div class="col-md-9" role="main">
+      <!-- Products ================================================== -->
+      <div class="bs-docs-section">
+        <div class="page-header">
+          <h1 id="prod-products">{{ getProducts() }}</h1>
+        </div>
+        <div ng-bind-html="getProductsText()"></div>
+      </div>
 
-<div ng-switch-when="ru">
-  <div class="container">
-    Producty
+      <!-- Our Plugins ================================================== -->
+      <div class="bs-docs-section">
+        <div class="page-header">
+          <h1 id="prod-plugins">{{ getOurPlugins() }}</h1>
+        </div>
+        <div ng-bind-html="getOurPluginsText()"></div>
+        <!--
+        <div class="list-group rhino-team">
+          <div class="list-group-item">
+            <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=demin&amp;type=follow"></iframe>
+            <a class="" href="https://github.com/demin">
+              <img src="#" alt="@demin">
+              <strong>Dimitry Demin</strong> <small>@demin</small>
+            </a>
+          </div>
+          <div class="list-group-item">
+            <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=petrov&amp;type=follow"></iframe>
+            <a class="" href="https://github.com/petrov">
+              <img src="#" alt="@petrov">
+              <strong>Denis Petrov</strong> <small>@petrov</small>
+            </a>
+          </div>
+          <div class="list-group-item">
+            <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=antklim&amp;type=follow"></iframe>
+            <a class="" href="https://github.com/antklim">
+              <img src="#" alt="@antklim">
+              <strong>Anton Klimenko</strong> <small>@antklim</small>
+            </a>
+          </div>
+        </div>
+      </div>
+      -->
+
+      </div>
+    </div>
   </div>
-</div> <!-- RU language -->
 
 </div>
