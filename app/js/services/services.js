@@ -30,9 +30,9 @@ RhinoIn.factory('SiteLang', [function(){
  *	- type - type of the element (buttons, labels, ...)
  *	- name - element's name
  */
-RhinoIn.factory('SiteText', ['SiteLang', 'SearchForm', 'SignInForm', 'AboutForm', 'ProductsForm',
-		function(SiteLang, SearchForm, SignInForm, AboutForm, ProductsForm) {
-	var forms = {'search': SearchForm, 'signin': SignInForm, 'about': AboutForm, 'products': ProductsForm};
+RhinoIn.factory('SiteText', ['SiteLang', 'SearchForm', 'SignInForm', 'AboutForm', 'ProductsForm', 'ServicesForm',
+		function(SiteLang, SearchForm, SignInForm, AboutForm, ProductsForm, ServicesForm) {
+	var forms = {'search': SearchForm, 'signin': SignInForm, 'about': AboutForm, 'products': ProductsForm, 'services': ServicesForm};
 	var types = ['button', 'label', 'placeholder', 'text'];
 
 	return {
@@ -298,6 +298,49 @@ RhinoIn.value('ProductsForm', {
 		plugins_body: {
 			'ru': "\u0417\u0434\u0435\u0441\u044C\u0020\u0431\u0443\u0434\u0435\u0442\u0020\u0441\u043F\u0438\u0441\u043E\u043A\u0020plug-ins",
 			'en': "The list of plug-ins will be here",
+		}
+	}
+});
+
+RhinoIn.value('ServicesForm', {
+	'label': {
+		consulting: {
+			'ru': "\u041a\u043E\u043D\u0441\u0443\u043B\u044C\u0442\u0430\u0446\u0438\u0438",
+			'en': "Consulting",
+		},
+		optimization: {
+			'ru': "\u041E\u043F\u0442\u0438\u043C\u0438\u0437\u0430\u0446\u0438\u044F",
+			'en': "Optimization",
+		},
+		search: {
+			'ru': "\u041F\u043E\u0438\u0441\u043A",
+			'en': "Search"
+		}
+	},
+	'text': {
+		consulting_head: {
+			'ru': "\u041C\u044B\u0020\u043F\u0440\u043E\u0432\u043E\u0434\u0438\u043C\u0020\u043A\u043E\u043D\u0441\u0443\u043B\u044C\u0442\u0430\u0446\u0438\u0438\u0020\u0444\u0438\u0440\u043C\u0020\u043D\u0430\u0020\u0435\u0432\u0440\u043E\u043F\u0435\u0439\u0441\u043A\u0438\u0445\u0020\u0438\u0020\u0440\u0443\u0441\u0441\u043A\u0438\u0445\u0020\u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0438\u0447\u0435\u0441\u043A\u043E\u002D\u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445\u0020\u0440\u044B\u043D\u043A\u0430\u0445\u002E",
+			'en': "We provide consultations for companies from Russian and European markets.",
+		},
+		consulting_body: {
+			'ru': "",
+			'en': "",
+		},
+		optimization_head: {
+			'ru': "\u041D\u0430\u0448\u0438\u0020\u0441\u043F\u0435\u0446\u0438\u0430\u043B\u0438\u0441\u0442\u044B\u0020\u043A\u043E\u043D\u0441\u0443\u043B\u044C\u0442\u0438\u0440\u0443\u044E\u0442\u0020\u043F\u043E\u0020\u043E\u043F\u0442\u0438\u043C\u0438\u0437\u0430\u0446\u0438\u0438\u0020\u0441\u0442\u0430\u0434\u0438\u0439\u0020\u043F\u0440\u043E\u0435\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u044F\u002C\u0020\u0430\u0020\u0442\u0430\u043A\u0436\u0435\u0020\u043F\u0440\u0435\u0434\u043E\u0441\u0442\u0430\u0432\u043B\u044F\u044E\u0442\u0020\u0443\u0441\u043B\u0443\u0433\u0438\u0020\u043F\u043E\u0020\u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u044E\u0020\u0028\u043D\u0430\u043F\u0438\u0441\u0430\u043D\u0438\u044E\u0020\u043F\u043B\u0430\u0433\u0438\u043D\u043E\u0432\u0029\u002E",
+			'en': "Our specialists provide consultations on optimising of planning steps. Also we are happy to offer you plug-in development service.",
+		},
+		optimization_body: {
+			'ru': "",
+			'en': "",
+		},
+		search_head: {
+			'ru': "\u041D\u0430\u0020\u0441\u0430\u0439\u0442\u0435\u0020\u0438\u043C\u0435\u0435\u0442\u0441\u044F\u0020\u0444\u0443\u043D\u043A\u0446\u0438\u044F\u0020\u043F\u043E\u0438\u0441\u043A\u0430\u002C\u0020\u043A\u043E\u0442\u043E\u0440\u044B\u0439\u0020\u043E\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043B\u044F\u0435\u0442\u0441\u044F\u0020\u043F\u043E\u0020\u0441\u0430\u0439\u0442\u0430\u043C\u002C\u0020\u0441\u0432\u044F\u0437\u0430\u043D\u043D\u044B\u0445\u0020\u0441\u0020\u043F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u0438\u0447\u0435\u0441\u043A\u0438\u043C\u0020\u0434\u0438\u0437\u0430\u0439\u043D\u043E\u043C\u002E",
+			'en': "We have a search service on the site which is seeking for the information on the sites refered to Parametric Design.",
+		},
+		search_body: {
+			'ru': "",
+			'en': "",
 		}
 	}
 });

@@ -109,4 +109,21 @@ describe('service', function() {
 			expect(ProductsForm.text.plugins_body).not.toBeUndefined();
 		}));
 	});
+
+	describe('services form', function() {
+		it('should return services form settings', inject(function(ServicesForm) {
+			expect(ServicesForm.label).not.toBeUndefined();
+			expect(ServicesForm.label.consulting).not.toBeUndefined();
+			expect(ServicesForm.label.optimization).not.toBeUndefined();
+			expect(ServicesForm.label.search).not.toBeUndefined();
+
+			expect(ServicesForm.text).not.toBeUndefined();
+			expect(ServicesForm.text.consulting_head).not.toBeUndefined();
+			expect(ServicesForm.text.consulting_body).not.toBeUndefined();
+			expect(ServicesForm.text.optimization_head).not.toBeUndefined();
+			expect(ServicesForm.text.optimization_body).not.toBeUndefined();
+			expect(ServicesForm.text.search_head).not.toBeUndefined();
+			expect(ServicesForm.text.search_body).not.toBeUndefined();
+		}));
+	});
 });
