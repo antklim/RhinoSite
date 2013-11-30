@@ -36,8 +36,11 @@ requirejs.config({
 		'controllers/search': {
 			deps: ['services/services']
 		},
+		'directives/directives': {
+			deps: ['services/services']
+		},
 		'bootstrap': {
-			deps: ['rhinoin', 'controllers/nav', 'controllers/search']
+			deps: ['rhinoin', 'controllers/nav', 'controllers/search', 'directives/directives']
 		}
 	}
 });

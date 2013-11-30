@@ -70,22 +70,9 @@ describe('service', function() {
 
 	describe('about form', function() {
 		it('should return about form settings', inject(function(AboutForm) {
-			expect(AboutForm.button).not.toBeUndefined();
-			expect(AboutForm.button.send_email).not.toBeUndefined();
-
-			expect(AboutForm.placeholder).not.toBeUndefined();
-			expect(AboutForm.placeholder.enter_email).not.toBeUndefined();
-			expect(AboutForm.placeholder.enter_subject).not.toBeUndefined();
-
 			expect(AboutForm.label).not.toBeUndefined();
-			expect(AboutForm.label.postal).not.toBeUndefined();
-			expect(AboutForm.label.phones).not.toBeUndefined();
-			expect(AboutForm.label.company_address).not.toBeUndefined();
-			expect(AboutForm.label.company_phones).not.toBeUndefined();
-			expect(AboutForm.label.company_emails).not.toBeUndefined();
-			expect(AboutForm.label.enter_email).not.toBeUndefined();
-			expect(AboutForm.label.enter_subject).not.toBeUndefined();
-			expect(AboutForm.label.message).not.toBeUndefined();
+			expect(AboutForm.label.about_rhino).not.toBeUndefined();
+			expect(AboutForm.label.our_team).not.toBeUndefined();
 
 			expect(AboutForm.text).not.toBeUndefined();
 			expect(AboutForm.text.about_rhino_head).not.toBeUndefined();
@@ -124,6 +111,37 @@ describe('service', function() {
 			expect(ServicesForm.text.optimization_body).not.toBeUndefined();
 			expect(ServicesForm.text.search_head).not.toBeUndefined();
 			expect(ServicesForm.text.search_body).not.toBeUndefined();
+		}));
+	});
+
+	describe('contact form', function() {
+		it('should return contact form settings', inject(function(ContactForm) {
+			expect(ContactForm.emails).not.toBeUndefined();
+			expect(ContactForm.emails.info_email).not.toBeUndefined();
+			expect(ContactForm.emails.support_email).not.toBeUndefined();
+
+			expect(ContactForm.phones).not.toBeUndefined();
+			expect(ContactForm.phones.mobile).not.toBeUndefined();
+
+			expect(ContactForm.button).not.toBeUndefined();
+			expect(ContactForm.button.send_email).not.toBeUndefined();
+
+			expect(ContactForm.placeholder).not.toBeUndefined();
+			expect(ContactForm.placeholder.enter_email).not.toBeUndefined();
+			expect(ContactForm.placeholder.enter_subject).not.toBeUndefined();
+
+			expect(ContactForm.label).not.toBeUndefined();
+			expect(ContactForm.label.postal).not.toBeUndefined();
+			expect(ContactForm.label.phones).not.toBeUndefined();
+			expect(ContactForm.label.address1).not.toBeUndefined();
+			expect(ContactForm.label.address2).not.toBeUndefined();
+			expect(ContactForm.label.address3).not.toBeUndefined();
+			expect(ContactForm.label.mobile).not.toBeUndefined();
+			expect(ContactForm.label.info_email).not.toBeUndefined();
+			expect(ContactForm.label.support_email).not.toBeUndefined();
+			expect(ContactForm.label.enter_email).not.toBeUndefined();
+			expect(ContactForm.label.enter_subject).not.toBeUndefined();
+			expect(ContactForm.label.message).not.toBeUndefined();
 		}));
 	});
 });

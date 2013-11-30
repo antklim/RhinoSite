@@ -1,4 +1,4 @@
-function NavCtrl($scope, $location, SiteMap, SiteLang, SiteLangList) {
+function NavCtrl($scope, $rootScope, $location, SiteMap, SiteLang, SiteLangList) {
 	$scope.activeItem = 'home';
 	$scope.langList = angular.copy( SiteLangList );
 	$scope.currentLang = angular.copy( SiteLang.getLanguage() );

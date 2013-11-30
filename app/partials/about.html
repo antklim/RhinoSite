@@ -58,36 +58,7 @@
       </div>
 
       <!-- Contact ================================================== -->
-      <div class="bs-docs-section">
-        <div class="page-header">
-          <h1 id="about-contact">{{ getContact() }}</h1>
-        </div>
-        <div class="row">
-          <div class="col-md-9">
-
-            <form role="form">
-              <div ng-bind-html="getEnterEmail()"></div>
-              <div ng-bind-html="getEnterSubject()"></div>
-              <div ng-bind-html="getMessage()"></div>
-              <button type="submit" class="btn btn-default" id="message">{{ getSendEmail() }}</button>
-            </form>
-
-          </div>
-          <div class="col-md-3">
-
-            <address>
-              <strong>{{ getPostal() }}</strong><br>
-              <div ng-bind-html="getCompanyAddress()"></div>
-            </address>
-            <address>
-              <strong>{{ getPhones() }}</strong><br>
-              <div ng-bind-html="getCompanyPhones()"></div>
-            </address>
-            <div ng-bind-html="getCompanyEmails()"></div>
-
-          </div>
-        </div>
-
+      <contact></contact>
       </div>
     </div>
   </div>

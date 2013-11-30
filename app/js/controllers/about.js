@@ -29,19 +29,19 @@ function AboutCtrl($scope, $sce, SiteText) {
 	};
 
 	$scope.getContact = function() {
-		return SiteText.getContent("about.label.contact");
+		return SiteText.getContent("contact.label.contact");
 	};
 
 	$scope.getPostal = function() {
-		return SiteText.getContent("about.label.postal");
+		return SiteText.getContent("contact.label.postal");
 	};
 
 	$scope.getPhones = function() {
-		return SiteText.getContent("about.label.phones");
+		return SiteText.getContent("contact.label.phones");
 	};
 
 	$scope.getCompanyAddress = function() {
-		var a = SiteText.getContent("about.label.company_address");
+		var a = SiteText.getContent("contact.label.company_address");
 		var res = "";
 		var tpl = "__ADDRESS__<br>";
 
@@ -61,7 +61,7 @@ function AboutCtrl($scope, $sce, SiteText) {
 	};
 
 	$scope.getCompanyPhones = function() {
-		var a = SiteText.getContent("about.label.company_phones");
+		var a = SiteText.getContent("contact.label.company_phones");
 		var res = "";
 		var tpl = "<abbr title='__TITLE__'>__TYPE__:</abbr>__PHONE__<br>";
 
@@ -85,7 +85,7 @@ function AboutCtrl($scope, $sce, SiteText) {
 	};
 
 	$scope.getCompanyEmails = function() {
-		var a = SiteText.getContent("about.label.company_emails");
+		var a = SiteText.getContent("contact.label.company_emails");
 		var res = "";
 		var tpl = "<address><strong>__TITLE__</strong><br><a href='mailto:__EMAIL__'>__EMAIL__</a><br></address>";
 
@@ -105,8 +105,8 @@ function AboutCtrl($scope, $sce, SiteText) {
 	};
 
 	$scope.getEnterEmail = function() {
-		var label = SiteText.getContent("about.label.enter_email"),
-			phldr = SiteText.getContent("about.placeholder.enter_email");
+		var label = SiteText.getContent("contact.label.enter_email"),
+			phldr = SiteText.getContent("contact.placeholder.enter_email");
 		var res = "";
 		var tpl = "<div class='form-group'><label for='email'>__LABEL__</label><input type='email' class='form-control' id='email' placeholder='__PHLDR__'></div>";
 
@@ -116,8 +116,8 @@ function AboutCtrl($scope, $sce, SiteText) {
 	};
 
 	$scope.getEnterSubject = function() {
-		var label = SiteText.getContent("about.label.enter_subject"),
-			phldr = SiteText.getContent("about.placeholder.enter_subject");
+		var label = SiteText.getContent("contact.label.enter_subject"),
+			phldr = SiteText.getContent("contact.placeholder.enter_subject");
 		var res = "";
 		var tpl = "<div class='form-group'><label for='subject'>__LABEL__</label><input type='text' class='form-control' id='subject' placeholder='__PHLDR__'></div>";
 
@@ -127,7 +127,7 @@ function AboutCtrl($scope, $sce, SiteText) {
 	};
 
 	$scope.getMessage = function() {
-		var label = SiteText.getContent("about.label.message");
+		var label = SiteText.getContent("contact.label.message");
 		var res = "";
 		var tpl = "<div class='form-group'><label for='message'>__LABEL__</label><textarea class='form-control' rows='4'></textarea></div>";
 
@@ -137,6 +137,6 @@ function AboutCtrl($scope, $sce, SiteText) {
 	};
 
 	$scope.getSendEmail = function() {
-		return SiteText.getContent("about.button.send_email");
+		return SiteText.getContent("contact.button.send_email");
 	};
 }

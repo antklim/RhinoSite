@@ -1,0 +1,51 @@
+<div class="bs-docs-section">
+	<div class="page-header">
+		<h1 id="about-contact">{{ contact }}</h1>
+	</div>	
+
+	<div class="row">
+		<div class="col-md-9">
+
+		<form role="form">
+			<div class="form-group">
+				<label for="email">{{ emailAddress}}</label>
+				<input type="email" class="form-control" id="email" placeholder="{{ emailAddressPH }}">
+			</div>
+
+			<div class="form-group">
+				<label for="subject">{{ subject }}</label>
+				<input type="text" class="form-control" id="subject" placeholder="{{ subjectPH }}">
+			</div>
+
+			<div class="form-group">
+				<label for="message">{{ message }}</label>
+				<textarea class="form-control" rows="4"></textarea>
+			</div>
+			<button type="submit" class="btn btn-default" id="message">{{ sendEmail }}</button>
+
+		</form>
+
+		</div>
+		<div class="col-md-3">
+
+			<address>
+				<strong>{{ postAddress }}</strong><br>
+				<div>{{ address1 }}<br>{{ address2 }}<br>{{ address3 }}<br></div>
+			</address>
+			<address>
+				<strong>{{ phones }}</strong><br>
+				<div><abbr title="{{ mobileTitle }}">M:</abbr>{{ mobile }}<br></div>
+			</address>
+			<address>
+				<strong>{{ commonInfo }}</strong><br>
+				<a href="mailto:{{ infoEmail }}">{{ infoEmail }}</a>
+			</address>
+			<address>
+				<strong>{{ techIssues }}</strong><br>
+				<a href="mailto:{{ supportEmail }}">{{ supportEmail }}</a>
+			</address>
+
+		</div>
+
+	</div>
+</div>

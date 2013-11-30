@@ -9,7 +9,7 @@ RhinoIn.value('SiteLangList', [
 	{ key: 'en', name: 'EN' }
 ]);
 
-RhinoIn.factory('SiteLang', [function(){
+RhinoIn.factory('SiteLang', ['$rootScope', function($rootScope){
 	var language = {key: 'ru', name: 'RU'};
 
 	return {
@@ -18,6 +18,7 @@ RhinoIn.factory('SiteLang', [function(){
 		},
 		setLanguage: function(lang) {
 			language = lang;
+			$rootScope.$broadcast("LANG_CHANGED", lang);
 			return lang;
 		}
 	};
@@ -30,9 +31,10 @@ RhinoIn.factory('SiteLang', [function(){
  *	- type - type of the element (buttons, labels, ...)
  *	- name - element's name
  */
-RhinoIn.factory('SiteText', ['SiteLang', 'SiteTmpl', 'SearchForm', 'SignInForm', 'AboutForm', 'ProductsForm', 'ServicesForm',
-		function(SiteLang, SiteTmpl, SearchForm, SignInForm, AboutForm, ProductsForm, ServicesForm) {
-	var forms = {'search': SearchForm, 'signin': SignInForm, 'about': AboutForm, 'products': ProductsForm, 'services': ServicesForm};
+RhinoIn.factory('SiteText', ['SiteLang', 'SiteTmpl', 'SearchForm', 'SignInForm', 'AboutForm', 'ProductsForm', 'ServicesForm', 'ContactForm',
+		function(SiteLang, SiteTmpl, SearchForm, SignInForm, AboutForm, ProductsForm, ServicesForm, ContactForm) {
+	var forms = {'search': SearchForm, 'signin': SignInForm, 'about': AboutForm, 
+					'products': ProductsForm, 'services': ServicesForm, 'contact': ContactForm};
 	var types = ['button', 'label', 'placeholder', 'text'];
 
 	return {
@@ -214,27 +216,7 @@ RhinoIn.value('SignInForm', {
 });
 
 RhinoIn.value('AboutForm', {
-	'button': {
-		send_email: {
-			'ru': "\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C\u0020email",
-			'en': "Send email"
-		},
-	},
-	'placeholder': {
-		enter_email: {
-			'ru': "\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u0432\u0430\u0448\u0020email",
-			'en': "Enter your email"
-		},
-		enter_subject: {
-			'ru': "\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u0442\u0435\u043C\u0443\u0020\u0441\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u044F\u0020",
-			'en': "Enter subject"
-		}
-	},
 	'label': {
-		contact: {
-			'ru': "\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u044b",
-			'en': "Contact"
-		},
 		about_rhino: {
 			'ru': "\u041e\u0020Rhino",
 			'en': "About Rhino"
@@ -242,41 +224,7 @@ RhinoIn.value('AboutForm', {
 		our_team: {
 			'ru': "\u041d\u0430\u0448\u0430\u0020\u043a\u043e\u043c\u0430\u043d\u0434\u0430",
 			'en': "Our team"
-		},
-		postal: {
-			'ru': "\u041f\u043e\u0447\u0442\u043e\u0432\u044b\u0439\u0020\u0430\u0434\u0440\u0435\u0441",
-			'en': "Postal Address"
-		},
-		phones: {
-			'ru': "\u0422\u0435\u043b\u0435\u0444\u043e\u043d\u044b",
-			'en': "Phones"
-		},
-		company_address: {
-			'ru': ["\u0443\u043b\u002e\u0020\u0032\u002d\u044f\u0020\u041b\u0443\u0433\u043e\u0432\u0430\u044f\u002c\u0020\u0032\u0038",
-					"\u0420\u043e\u0441\u0442\u043e\u0432\u002d\u043d\u0430\u002d\u0414\u043e\u043d\u0443", "\u0420\u043e\u0441\u0441\u0438\u044f"],
-			'en': ["28, 2nd Lugovaya Street", "Rostov on Don", "Russia"]
-		},
-		company_phones: {
-			'ru': [{type: "M", phone: "+7(960)450-04-05", title: "\u041c\u043e\u0431\u0438\u043b\u044c\u043d\u044b\u0439"}],
-			'en': [{type: "M", phone: "+7(960)450-0405", title: "Mobile"}]
-		},
-		company_emails: {
-			'ru': [{email: "info@rhino-in.com", title: "\u041e\u0431\u0449\u0430\u044f\u0020\u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f"},
-					{email: "support@rhino-in.com", title: "\u0422\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0435\u0020\u0432\u043e\u043f\u0440\u043e\u0441\u044b"}],
-			'en': [{email: "info@rhino-in.com", title: "General info"}, {email: "support@rhino-in.com", title: "Technical issues"}]
-		},
-		enter_email: {
-			'ru': "Email\u0020\u0430\u0434\u0440\u0435\u0441",
-			'en': "Email address"
-		},
-		enter_subject: {
-			'ru': "\u0422\u0435\u043C\u0430\u0020\u0441\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u044F",
-			'en': "Subject"
-		},
-		message: {
-			'ru': "\u0421\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u0435",
-			'en': "Message"
-		},
+		}
 	},
 	'text': {
 		about_rhino_head: {
@@ -375,5 +323,81 @@ RhinoIn.value('ServicesForm', {
 			'ru': "",
 			'en': "",
 		}
+	}
+});
+
+RhinoIn.value('ContactForm', {
+	emails: {
+		info_email: "info@rhino-in.com",
+		support_email: "support@rhino-in.com"
+	},
+	phones: {
+		mobile: "+7(960)450-04-05"
+	},
+	'button': {
+		send_email: {
+			'ru': "\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C\u0020email",
+			'en': "Send email"
+		},
+	},
+	'placeholder': {
+		enter_email: {
+			'ru': "\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u0432\u0430\u0448\u0020email",
+			'en': "Enter your email"
+		},
+		enter_subject: {
+			'ru': "\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u0442\u0435\u043C\u0443\u0020\u0441\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u044F\u0020",
+			'en': "Enter subject"
+		}
+	},
+	'label': {
+		contact: {
+			'ru': "\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u044b",
+			'en': "Contact"
+		},
+		postal: {
+			'ru': "\u041f\u043e\u0447\u0442\u043e\u0432\u044b\u0439\u0020\u0430\u0434\u0440\u0435\u0441",
+			'en': "Postal Address"
+		},
+		phones: {
+			'ru': "\u0422\u0435\u043b\u0435\u0444\u043e\u043d\u044b",
+			'en': "Phones"
+		},
+		address1: {
+			'ru': "\u0443\u043b\u002e\u0020\u0032\u002d\u044f\u0020\u041b\u0443\u0433\u043e\u0432\u0430\u044f\u002c\u0020\u0032\u0038",
+			'en': "28, 2nd Lugovaya Street"
+		},
+		address2: {
+			'ru': "\u0420\u043e\u0441\u0442\u043e\u0432\u002d\u043d\u0430\u002d\u0414\u043e\u043d\u0443",
+			'en': "Rostov on Don"
+		},
+		address3: {
+			'ru': "\u0420\u043e\u0441\u0441\u0438\u044f",
+			'en': "Russia"
+		},
+		mobile: {
+			'ru': "\u041c\u043e\u0431\u0438\u043b\u044c\u043d\u044b\u0439",
+			'en': "Mobile"
+		},
+		info_email: {
+			'ru': "\u041e\u0431\u0449\u0430\u044f\u0020\u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f",
+			'en': "General info"
+		},
+		support_email: {
+			'ru': "\u0422\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0435\u0020\u0432\u043e\u043f\u0440\u043e\u0441\u044b",
+			'en': "Technical issues"
+		},
+		enter_email: {
+			'ru': "Email\u0020\u0430\u0434\u0440\u0435\u0441",
+			'en': "Email address"
+		},
+		enter_subject: {
+			'ru': "\u0422\u0435\u043C\u0430\u0020\u0441\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u044F",
+			'en': "Subject"
+		},
+		message: {
+			'ru': "\u0421\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u0435",
+			'en': "Message"
+		},
 	}
 });
