@@ -35,11 +35,11 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class='{{ activeItem == "home"     && "active" || "" }}'><a href hm-tap='nav("home")'>{{ siteMap.home.name[ currentLang.key ] }}</a></li>
-            <li class='{{ activeItem == "about"    && "active" || "" }}'><a href hm-tap='nav("about")'>{{ siteMap.about.name[ currentLang.key ] }}</a></li>
-            <li class='{{ activeItem == "services" && "active" || "" }}'><a href hm-tap='nav("services")'>{{ siteMap.services.name[ currentLang.key ] }}</a></li>
-            <li class='{{ activeItem == "products" && "active" || "" }}'><a href hm-tap='nav("products")'>{{ siteMap.products.name[ currentLang.key ] }}</a></li>
-            <li class='{{ activeItem == "contact"  && "active" || "" }}'><a href hm-tap='nav("contact")'>{{ siteMap.contact.name[ currentLang.key ] }}</a></li>
+            <li class='{{ activeItem == "home"     && "active" || "" }}'><a href hm-tap='nav("home")'>{{ home }}</a></li>
+            <li class='{{ activeItem == "about"    && "active" || "" }}'><a href hm-tap='nav("about")'>{{ about }}</a></li>
+            <li class='{{ activeItem == "services" && "active" || "" }}'><a href hm-tap='nav("services")'>{{ services }}</a></li>
+            <li class='{{ activeItem == "products" && "active" || "" }}'><a href hm-tap='nav("products")'>{{ products }}</a></li>
+            <li class='{{ activeItem == "contact"  && "active" || "" }}'><a href hm-tap='nav("contact")'>{{ contact }}</a></li>
           </ul>
           <form class="navbar-form navbar-left" role="search" ng-controller="SearchCtrl">
             <div class="form-group">
@@ -48,7 +48,6 @@
             <button type="submit" class="btn btn-default" hm-tap="search()">{{ searchButton }}</button>
           </form>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="" hm-tap='nav("signin")'>{{ siteMap.signin.name[ currentLang.key ] }}</a></li>
             <li class="dropdown">
               <a href="" class="dropdown-toggle" data-toggle="dropdown">{{ currentLang.name }}<b class="caret"></b></a>
               <ul class="dropdown-menu language-menu" role="menu">
@@ -56,6 +55,12 @@
               </ul>
             </li>
           </ul>
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <a href class="btn btn-success" role="button" hm-tap='nav("signup")'>{{ signUp }}</a>
+              <a href class="btn btn-primary" role="button" hm-tap='nav("signin")'>{{ signIn }}</a>
+            </div>
+          </form>
         </div><!--/.navbar-collapse -->
       </div>
     </div>

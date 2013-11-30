@@ -23,7 +23,6 @@ describe('NavCtrl', function(){
 		expect($scope.activeItem).toBe('home');
 		expect($scope.langList).toEqual(SiteLangList);
 		expect($scope.currentLang).toEqual(currentLang);
-		expect($scope.siteMap).toEqual(SiteMap);
 
 		expect($scope.nav).not.toBeUndefined();
 		expect($scope.lang).not.toBeUndefined();

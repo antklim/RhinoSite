@@ -38,6 +38,20 @@ describe('service', function() {
 		}));
 	});
 
+	describe('nav form', function() {
+		it('should return nav form settings', inject(function(NavForm) {
+			expect(NavForm).not.toBeUndefined();
+			expect(NavForm.label).not.toBeUndefined();
+			expect(NavForm.label.home).not.toBeUndefined();
+			expect(NavForm.label.about).not.toBeUndefined();
+			expect(NavForm.label.services).not.toBeUndefined();
+			expect(NavForm.label.products).not.toBeUndefined();
+			expect(NavForm.label.contact).not.toBeUndefined();
+			expect(NavForm.label.signup).not.toBeUndefined();
+			expect(NavForm.label.signin).not.toBeUndefined();
+		}));
+	});
+
 	describe('search form', function() {
 		it('should return search form settings', inject(function(SearchForm) {
 			expect(SearchForm).not.toBeUndefined();

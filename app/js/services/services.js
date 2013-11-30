@@ -31,10 +31,10 @@ RhinoIn.factory('SiteLang', ['$rootScope', function($rootScope){
  *	- type - type of the element (buttons, labels, ...)
  *	- name - element's name
  */
-RhinoIn.factory('SiteText', ['SiteLang', 'SiteTmpl', 'SearchForm', 'SignInForm', 'AboutForm', 'ProductsForm', 'ServicesForm', 'ContactForm',
-		function(SiteLang, SiteTmpl, SearchForm, SignInForm, AboutForm, ProductsForm, ServicesForm, ContactForm) {
+RhinoIn.factory('SiteText', ['SiteLang', 'SiteTmpl', 'SearchForm', 'SignInForm', 'AboutForm', 'ProductsForm', 'ServicesForm', 'ContactForm', 'NavForm',
+		function(SiteLang, SiteTmpl, SearchForm, SignInForm, AboutForm, ProductsForm, ServicesForm, ContactForm, NavForm) {
 	var forms = {'search': SearchForm, 'signin': SignInForm, 'about': AboutForm, 
-					'products': ProductsForm, 'services': ServicesForm, 'contact': ContactForm};
+					'products': ProductsForm, 'services': ServicesForm, 'contact': ContactForm, 'nav': NavForm};
 	var types = ['button', 'label', 'placeholder', 'text'];
 
 	return {
@@ -101,58 +101,60 @@ RhinoIn.value('SiteMap', {
 	'default': {
 		location: '/home'
 	},
-	'home':
-		{
-			location: '/home',
-			name: {
-				'ru': '\u0413\u043b\u0430\u0432\u043d\u0430\u044f',
-				'en': 'Home'
-			}
-		},
+	'home':	{
+		location: '/home',
+	},
+	'about': {
+		location: '/about',
+	},
+	'services': {
+		location: '/services',
+	},
+	'products': {
+		location: '/products',
+	},
+	'contact': {
+		location: '/contact',
+	},
+	'signup': {
+		location: '/signup',
+	},
+	'signin': {
+		location: '/signin',
+	}
+});
 
-	'about':
-		{
-			location: '/about',
-			name: {
-				'ru': '\u041e\u0020\u043d\u0430\u0441',
-				'en': 'About'
-			}
+RhinoIn.value('NavForm', {
+	'label': {
+		home:	{
+			'ru': '\u0413\u043b\u0430\u0432\u043d\u0430\u044f',
+			'en': 'Home'
 		},
-
-	'services':
-		{
-			location: '/services',
-			name: {
-				'ru': '\u0421\u0435\u0440\u0432\u0438\u0441\u044b',
-				'en': 'Services'
-			}
+		about: {
+			'ru': '\u041e\u0020\u043d\u0430\u0441',
+			'en': 'About'
 		},
-
-	'products':
-		{
-			location: '/products',
-			name: {
-				'ru': '\u041f\u0440\u043e\u0434\u0443\u043a\u0442\u044b',
-				'en': 'Products'
-			}
+		services: {
+			'ru': '\u0421\u0435\u0440\u0432\u0438\u0441\u044b',
+			'en': 'Services'
 		},
-
-	'contact':
-		{
-			location: '/contact',
-			name: {
-				'ru': '\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u044b',
-				'en': 'Contact'
-			}
+		products: {
+			'ru': '\u041f\u0440\u043e\u0434\u0443\u043a\u0442\u044b',
+			'en': 'Products'
 		},
-	'signin':
-		{
-			location: '/signin',
-			name: {
-				'ru': '\u0412\u0445\u043e\u0434',
-				'en': 'Sign In'
-			}
+		contact: {
+			'ru': '\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u044b',
+			'en': 'Contact'
 		},
+		signup: {
+			'ru': '\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044F',
+			'en': 'Sign Up'
+		},		
+		signin: {
+			'ru': '\u0412\u0445\u043e\u0434',
+			'en': 'Sign In'
+		}
+	}
 });
 
 RhinoIn.value('SearchForm', {
@@ -179,8 +181,8 @@ RhinoIn.value('SignInForm', {
 			'en': 'Sign In'
 		},
 		register: {
-			'ru': 'Zaregistririvatsa',
-			'en': 'Register'
+			'ru': '\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044F',
+			'en': 'Sign Up'
 		}
 	},
 	'placeholder': {

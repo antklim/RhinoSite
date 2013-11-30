@@ -1,8 +1,7 @@
-function NavCtrl($scope, $rootScope, $location, SiteMap, SiteLang, SiteLangList) {
+function NavCtrl($scope, $rootScope, $location, SiteMap, SiteLang, SiteLangList, SiteText) {
 	$scope.activeItem = 'home';
 	$scope.langList = angular.copy( SiteLangList );
 	$scope.currentLang = angular.copy( SiteLang.getLanguage() );
-	$scope.siteMap = angular.copy( SiteMap );
 
 	$scope.nav = function(item) {
 		if (_.has(SiteMap, item)) {
@@ -24,5 +23,46 @@ function NavCtrl($scope, $rootScope, $location, SiteMap, SiteLang, SiteLangList)
 	$scope.lang = function(lng) {
 		$scope.currentLang = lng;
 		SiteLang.setLanguage(lng);
+		$scope.init();
 	};
+
+	var getHome = function() {
+		return SiteText.getContent("nav.label.home");
+	};
+
+	var getAbout = function() {
+		return SiteText.getContent("nav.label.about");
+	};
+
+	var getServices = function() {
+		return SiteText.getContent("nav.label.services");
+	};
+
+	var getProducts = function() {
+		return SiteText.getContent("nav.label.products");
+	};
+
+	var getContact = function() {
+		return SiteText.getContent("nav.label.contact");
+	};
+
+	var getSignUp = function() {
+		return SiteText.getContent("nav.label.signup");
+	};
+
+	var getSignIn = function() {
+		return SiteText.getContent("nav.label.signin");
+	};
+
+	$scope.init = function() {
+		$scope.home = getHome();
+		$scope.about = getAbout();
+		$scope.services = getServices();
+		$scope.products = getProducts();
+		$scope.contact = getContact();
+		$scope.signUp = getSignUp();
+		$scope.signIn = getSignIn();
+	};
+
+	$scope.init();
 }
