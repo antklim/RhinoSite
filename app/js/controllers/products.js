@@ -1,4 +1,4 @@
-function ProductsCtrl($scope,  $sce, $location, SiteMap, SiteText) {
+function ProductsCtrl($scope, $sce, SiteText) {
 	$scope.activeItem = 'products';
 	$scope.anchorPrefix = "prod-";
 
@@ -11,19 +11,10 @@ function ProductsCtrl($scope,  $sce, $location, SiteMap, SiteText) {
 	};
 
 	$scope.getProductsText = function() {
-		var head = SiteText.getContent("products.text.products_head"),
-			body = SiteText.getContent("products.text.products_body");
-		var res = "";
-		var tpl = "<p class='lead'>__HEAD__</p>";
+		var head = SiteText.getContent("products.text.products.head"),
+			body = SiteText.getContent("products.text.products.body");
 
-		res += tpl.replace(/__HEAD__/g, head);
-
-		tpl = "<p>__BODY__</p>";
-		for(var i=0, len=body.length; i<len; i++) {
-			res += tpl.replace(/__BODY__/g, body[ i ]);
-		}
-
-		return $sce.trustAsHtml(res);
+		return $sce.trustAsHtml(head + body);
 	};
 
 	$scope.getOurPlugins = function() {
@@ -31,18 +22,9 @@ function ProductsCtrl($scope,  $sce, $location, SiteMap, SiteText) {
 	};
 
 	$scope.getOurPluginsText = function() {
-		var head = SiteText.getContent("products.text.plugins_head"),
-			body = SiteText.getContent("products.text.plugins_body");
-		var res = "";
-		var tpl = "<p class='lead'>__HEAD__</p><p>__BODY__</p>";
+		var head = SiteText.getContent("products.text.plugins.head"),
+			body = SiteText.getContent("products.text.plugins.body");
 
-		res += tpl.replace(/__HEAD__/g, head).replace(/__BODY__/g, body);
-
-		return $sce.trustAsHtml(res);
-	};
-
-	$scope.contact = function() {
-		console.log('contact');
-		$location.path(SiteMap[ 'contact' ].location);
+		return $sce.trustAsHtml(head + body);
 	};
 }

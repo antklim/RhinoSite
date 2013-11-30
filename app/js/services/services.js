@@ -30,8 +30,8 @@ RhinoIn.factory('SiteLang', [function(){
  *	- type - type of the element (buttons, labels, ...)
  *	- name - element's name
  */
-RhinoIn.factory('SiteText', ['SiteLang', 'SearchForm', 'SignInForm', 'AboutForm', 'ProductsForm', 'ServicesForm',
-		function(SiteLang, SearchForm, SignInForm, AboutForm, ProductsForm, ServicesForm) {
+RhinoIn.factory('SiteText', ['SiteLang', 'SiteTmpl', 'SearchForm', 'SignInForm', 'AboutForm', 'ProductsForm', 'ServicesForm',
+		function(SiteLang, SiteTmpl, SearchForm, SignInForm, AboutForm, ProductsForm, ServicesForm) {
 	var forms = {'search': SearchForm, 'signin': SignInForm, 'about': AboutForm, 'products': ProductsForm, 'services': ServicesForm};
 	var types = ['button', 'label', 'placeholder', 'text'];
 
@@ -46,6 +46,11 @@ RhinoIn.factory('SiteText', ['SiteLang', 'SearchForm', 'SignInForm', 'AboutForm'
 				return null;
 			}
 
+			// Need it to find templated content
+			if (!_.isUndefined(arr[3])) {
+				arr[2] += "_" + arr[3];
+			}
+
 			if (!_.has(forms, arr[0]) || _.indexOf(types, arr[1]) === -1) {
 				return null;
 			} else {
@@ -55,12 +60,40 @@ RhinoIn.factory('SiteText', ['SiteLang', 'SearchForm', 'SignInForm', 'AboutForm'
 					var lang = SiteLang.getLanguage();		
 					var content = forms[ arr[0] ][ arr[1] ][ arr[2] ][ lang.key ];
 
-					return (!_.isUndefined(content)) ? content :null;
+					if (_.isUndefined(content)) {
+						return null;
+					} 
+
+					if (_.has(SiteTmpl, arr[1]) && !_.isUndefined(arr[3]) && _.has(SiteTmpl[ arr[1] ], arr[3])) {
+						var tmpl = SiteTmpl[ arr[1] ][ arr[3] ];
+
+						if (_.isString(content)) {
+							return tmpl.replace(/__TMPL__/g, content);
+						} else if (_.isArray(content)) {
+							var res = "";
+
+							for (var i=0, len=content.length; i<len; i++) {
+								res += tmpl.replace(/__TMPL__/g, content[i]);
+							}
+							return res;
+						} else {
+							return content;
+						}
+					} else {
+						return content;
+					}
 				}
 			}
 		}
 	};
 }]);
+
+RhinoIn.value('SiteTmpl', {
+	'text': {
+		'head': "<p class='lead'>__TMPL__</p>",
+		'body': "<p>__TMPL__</p>"
+	},
+});
 
 RhinoIn.value('SiteMap', {
 	'default': {
@@ -320,7 +353,7 @@ RhinoIn.value('ServicesForm', {
 	'text': {
 		consulting_head: {
 			'ru': "\u041C\u044B\u0020\u043F\u0440\u043E\u0432\u043E\u0434\u0438\u043C\u0020\u043A\u043E\u043D\u0441\u0443\u043B\u044C\u0442\u0430\u0446\u0438\u0438\u0020\u0444\u0438\u0440\u043C\u0020\u043D\u0430\u0020\u0435\u0432\u0440\u043E\u043F\u0435\u0439\u0441\u043A\u0438\u0445\u0020\u0438\u0020\u0440\u0443\u0441\u0441\u043A\u0438\u0445\u0020\u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0438\u0447\u0435\u0441\u043A\u043E\u002D\u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u0445\u0020\u0440\u044B\u043D\u043A\u0430\u0445\u002E",
-			'en': "We provide consultations for companies from Russian and European markets.",
+			'en': "We provide consultations for companies from Russian and European markets."
 		},
 		consulting_body: {
 			'ru': "",

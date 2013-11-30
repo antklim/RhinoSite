@@ -11,14 +11,10 @@ function ServicesCtrl($scope, $sce, SiteText) {
 	};
 
 	$scope.getConsultingText = function() {
-		var head = SiteText.getContent("services.text.consulting_head"),
-			body = SiteText.getContent("services.text.consulting_body");
-		var res = "";
-		var tpl = "<p class='lead'>__HEAD__</p><p>__BODY__</p>";
+		var head = SiteText.getContent("services.text.consulting.head"),
+			body = SiteText.getContent("services.text.consulting.body");
 
-		res += tpl.replace(/__HEAD__/g, head).replace(/__BODY__/g, body);
-
-		return $sce.trustAsHtml(res);
+		return $sce.trustAsHtml(head + body);
 	};
 
 	$scope.getOptimization = function() {
@@ -26,14 +22,10 @@ function ServicesCtrl($scope, $sce, SiteText) {
 	};
 
 	$scope.getOptimizationText = function() {
-		var head = SiteText.getContent("services.text.optimization_head"),
-			body = SiteText.getContent("services.text.optimization_body");
-		var res = "";
-		var tpl = "<p class='lead'>__HEAD__</p><p>__BODY__</p>";
+		var head = SiteText.getContent("services.text.optimization.head"),
+			body = SiteText.getContent("services.text.optimization.body");
 
-		res += tpl.replace(/__HEAD__/g, head).replace(/__BODY__/g, body);
-
-		return $sce.trustAsHtml(res);
+		return $sce.trustAsHtml(head + body);
 	};
 
 	$scope.getSearch = function() {
@@ -41,13 +33,9 @@ function ServicesCtrl($scope, $sce, SiteText) {
 	};
 
 	$scope.getSearchText = function() {
-		var head = SiteText.getContent("services.text.search_head"),
-			body = SiteText.getContent("services.text.search_body");
-		var res = "";
-		var tpl = "<p class='lead'>__HEAD__</p><p>__BODY__</p>";
+		var head = SiteText.getContent("services.text.search.head"),
+			body = SiteText.getContent("services.text.search.body");
 
-		res += tpl.replace(/__HEAD__/g, head).replace(/__BODY__/g, body);
-
-		return $sce.trustAsHtml(res);
+		return $sce.trustAsHtml(head + body);
 	};
 }
