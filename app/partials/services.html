@@ -4,13 +4,13 @@
       <div class="bs-sidebar hidden-print affix-top" role="complementary">
       <ul class="nav bs-sidenav">
           <li class='{{ activeItem == "consulting" && "active" || "" }}'>
-            <a href hm-tap='anchor("consulting")'>{{ getConsulting() }}</a>
+            <a href hm-tap='anchor("consulting")'>{{ consulting }}</a>
           </li>
           <li class='{{ activeItem == "optimization" && "active" || "" }}'>
-            <a href hm-tap='anchor("optimization")'>{{ getOptimization() }}</a>
+            <a href hm-tap='anchor("optimization")'>{{ optimization }}</a>
           </li>
           <li class='{{ activeItem == "search" && "active" || "" }}'>
-            <a href hm-tap='anchor("search")'>{{ getSearch() }}</a>
+            <a href hm-tap='anchor("search")'>{{ search }}</a>
           </li>
       </ul>
     </div>
@@ -19,25 +19,25 @@
       <!-- Consulting ================================================== -->
       <div class="bs-docs-section">
         <div class="page-header">
-          <h1 id="prod-products">{{ getConsulting() }}</h1>
+          <h1 id="prod-products">{{ consulting }}</h1>
         </div>
-        <div ng-bind-html="getConsultingText()"></div>
+        <div ng-bind-html="consultingText"></div>
       </div>
 
       <!-- Optimization ================================================== -->
       <div class="bs-docs-section">
         <div class="page-header">
-          <h1 id="prod-plugins">{{ getOptimization() }}</h1>
+          <h1 id="prod-plugins">{{ optimization }}</h1>
         </div>
-        <div ng-bind-html="getOptimizationText()"></div>
+        <div ng-bind-html="optimizationText"></div>
       </div>
 
       <!-- Search ================================================== -->
       <div class="bs-docs-section">
         <div class="page-header">
-          <h1 id="prod-plugins">{{ getSearch() }}</h1>
+          <h1 id="prod-plugins">{{ search }}</h1>
         </div>
-        <div ng-bind-html="getSearchText()"></div>
+        <div ng-bind-html="searchText"></div>
       </div>
     </div>
   </div>

@@ -4,13 +4,13 @@
       <div class="bs-sidebar hidden-print affix-top" role="complementary">
       <ul class="nav bs-sidenav">
           <li class='{{ activeItem == "rhino" && "active" || "" }}'>
-            <a href hm-tap='anchor("rhino")'>{{ getAboutRhino() }}</a>
+            <a href hm-tap='anchor("rhino")'>{{ aboutRhino }}</a>
           </li>
           <li class='{{ activeItem == "team" && "active" || "" }}'>
-            <a href hm-tap='anchor("team")'>{{ getOurTeam() }}</a>
+            <a href hm-tap='anchor("team")'>{{ ourTeam }}</a>
           </li>
           <li class='{{ activeItem == "contact" && "active" || "" }}'>
-            <a href hm-tap='anchor("contact")'>{{ getContact() }}</a>
+            <a href hm-tap='anchor("contact")'>{{ contact }}</a>
           </li>
       </ul>
     </div>
@@ -19,19 +19,17 @@
       <!-- About RhinoIn ================================================== -->
       <div class="bs-docs-section">
         <div class="page-header">
-          <h1 id="about-rhino">{{ getAboutRhino() }}</h1>
+          <h1 id="about-rhino">{{ aboutRhino }}</h1>
         </div>
-        <div ng-bind-html="getAboutRhinoText()"></div>
+        <div ng-bind-html="aboutRhinoText"></div>
       </div>
 
       <!-- Our Team ================================================== -->
       <div class="bs-docs-section">
         <div class="page-header">
-          <h1 id="about-team">{{ getOurTeam() }}</h1>
+          <h1 id="about-team">{{ ourTeam }}</h1>
         </div>
-        <!--<p class="lead">RhinoIn is maintained by the founding team and a small group of invaluable core contributors, with the massive support and involvement of our community.</p>-->
-        <!--<p class="lead">RhinoIn is maintained by BLA BLA.</p>-->
-        <div ng-bind-html="getOurTeamText()"></div>
+        <div ng-bind-html="ourTeamText"></div>
         <div class="list-group rhino-team">
           <div class="list-group-item">
             <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=demin&amp;type=follow"></iframe>

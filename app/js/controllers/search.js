@@ -5,11 +5,22 @@ function SearchCtrl($scope, SiteText) {
 		console.log($scope.searchFor);
 	};
 
-	$scope.getPlaceholder = function() {
+	var getSearchPH = function() {
 		return SiteText.getContent("search.placeholder.search");
 	};
 
-	$scope.getButtonName = function() {
+	var getSearchButton = function() {
 		return SiteText.getContent("search.button.search");
 	};
+
+	$scope.init = function() {
+		$scope.searchPH = getSearchPH();
+		$scope.searchButton = getSearchButton();
+	};
+
+	$scope.init();
+
+	$scope.$on("LANG_CHANGED", function(event, data) {
+		$scope.init();
+	});
 }

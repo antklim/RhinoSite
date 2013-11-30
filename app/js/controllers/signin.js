@@ -2,40 +2,56 @@ function SignInCtrl($scope, SiteText) {
 	$scope.email = "";
 	$scope.password = "";
 
-	$scope.getDivider = function() {
+	var getDivider = function() {
 		return SiteText.getContent("signin.label.divider");
 	};
 
-	$scope.getEmailPH = function() {
+	var getEmailPH = function() {
 		return SiteText.getContent("signin.placeholder.email");
 	};
 
-	$scope.getPasswordPH = function() {
+	var getPasswordPH = function() {
 		return SiteText.getContent("signin.placeholder.password");
 	};
 
-	$scope.getSignInName = function() {
+	var getSignInName = function() {
 		return SiteText.getContent("signin.button.signin");
 	};
 
-	$scope.getRegisterName = function() {
+	var getRegisterName = function() {
 		return SiteText.getContent("signin.button.register");
 	};
 
-	$scope.getSignInLabel = function() {
+	var getSignInLabel = function() {
 		return SiteText.getContent("signin.label.signin");
 	};
 
-	$scope.getRememberMe = function() {
+	var getRememberMe = function() {
 		return SiteText.getContent("signin.label.remember");
 	};
 
-	$scope.getRegisterLabel = function() {
+	var getRegisterLabel = function() {
 		return SiteText.getContent("signin.label.register");
 	};
 
+	$scope.init = function() {
+		$scope.divider = getDivider();
+		$scope.emailPH = getEmailPH();
+		$scope.passwordPH = getPasswordPH();
+		$scope.signInName = getSignInName();
+		$scope.registerName = getRegisterName();
+		$scope.signInLabel = getSignInLabel();
+		$scope.rememberMe = getRememberMe();
+		$scope.registerLabel = getRegisterLabel();
+	};
+
+	$scope.init();
+
+	$scope.$on("LANG_CHANGED", function(event, data) {
+		$scope.init();
+	});
+
 	$scope.signin = function() {
 		console.log($scope.email, $scope.password);
-
 	};
 }

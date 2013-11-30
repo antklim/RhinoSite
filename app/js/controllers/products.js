@@ -6,25 +6,38 @@ function ProductsCtrl($scope, $sce, SiteText) {
 		$scope.activeItem = item;
 	};
 
-	$scope.getProducts = function() {
+	var getProducts = function() {
 		return SiteText.getContent("products.label.products");
 	};
 
-	$scope.getProductsText = function() {
+	var getProductsText = function() {
 		var head = SiteText.getContent("products.text.products.head"),
 			body = SiteText.getContent("products.text.products.body");
 
 		return $sce.trustAsHtml(head + body);
 	};
 
-	$scope.getOurPlugins = function() {
+	var getOurPlugins = function() {
 		return SiteText.getContent("products.label.plugins");
 	};
 
-	$scope.getOurPluginsText = function() {
+	var getOurPluginsText = function() {
 		var head = SiteText.getContent("products.text.plugins.head"),
 			body = SiteText.getContent("products.text.plugins.body");
 
 		return $sce.trustAsHtml(head + body);
 	};
+
+	$scope.init = function() {
+		$scope.products = getProducts();
+		$scope.productsText = getProductsText();
+		$scope.ourPlugins = getOurPlugins();
+		$scope.ourPluginsText = getOurPluginsText();
+	};
+
+	$scope.init();
+	
+	$scope.$on("LANG_CHANGED", function(event, data) {
+		$scope.init();
+	});
 }

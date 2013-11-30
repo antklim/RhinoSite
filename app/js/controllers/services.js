@@ -6,36 +6,51 @@ function ServicesCtrl($scope, $sce, SiteText) {
 		$scope.activeItem = item;
 	};
 
-	$scope.getConsulting = function() {
+	var getConsulting = function() {
 		return SiteText.getContent("services.label.consulting");
 	};
 
-	$scope.getConsultingText = function() {
+	var getConsultingText = function() {
 		var head = SiteText.getContent("services.text.consulting.head"),
 			body = SiteText.getContent("services.text.consulting.body");
 
 		return $sce.trustAsHtml(head + body);
 	};
 
-	$scope.getOptimization = function() {
+	var getOptimization = function() {
 		return SiteText.getContent("services.label.optimization");
 	};
 
-	$scope.getOptimizationText = function() {
+	var getOptimizationText = function() {
 		var head = SiteText.getContent("services.text.optimization.head"),
 			body = SiteText.getContent("services.text.optimization.body");
 
 		return $sce.trustAsHtml(head + body);
 	};
 
-	$scope.getSearch = function() {
+	var getSearch = function() {
 		return SiteText.getContent("services.label.search");
 	};
 
-	$scope.getSearchText = function() {
+	var getSearchText = function() {
 		var head = SiteText.getContent("services.text.search.head"),
 			body = SiteText.getContent("services.text.search.body");
 
 		return $sce.trustAsHtml(head + body);
 	};
+
+	$scope.init = function() {
+		$scope.consulting = getConsulting();
+		$scope.consultingText = getConsultingText();
+		$scope.optimization = getOptimization();
+		$scope.optimizationText = getOptimizationText();
+		$scope.search = getSearch();
+		$scope.searchText = getSearchText();
+	};
+
+	$scope.init();
+
+	$scope.$on("LANG_CHANGED", function(event, data) {
+		$scope.init();
+	});
 }
