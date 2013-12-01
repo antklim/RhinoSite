@@ -161,6 +161,30 @@ RhinoIn.config(['$routeProvider', '$controllerProvider', '$compileProvider', '$f
 			}
 		});
 
+		$routeProvider.when('/signup', {
+			templateUrl: './partials/signup.html',
+			controller: 'SignUpCtrl',
+			resolve: {
+			
+				load: ['$q', '$rootScope', function($q, $rootScope) {
+
+					var deferred = $q.defer();
+					var deps = [
+						'services/services',
+						'controllers/signup'
+					];
+
+					require(deps, function() {
+						$rootScope.$apply(function() {
+							deferred.resolve();
+						});
+					});
+
+					return deferred.promise;
+				}]
+			}
+		});
+
 		$routeProvider.otherwise({redirectTo: '/'});
 }]);
 

@@ -1,0 +1,12 @@
+<div class="container">
+  <form class="form-signin">
+    <h2 class="form-signin-heading">{{ registerLabel }}</h2>
+    
+    <input type="text" class="form-control" placeholder="{{ usernamePH }}" required="" autocomplete="off" ng-model="username">
+    <input type="text" class="form-control" placeholder="{{ emailPH }}" required="" autocomplete="off" ng-model="email">
+    <input type="password" class="form-control" placeholder="{{ passwordPH }}" required="" autocomplete="off" ng-model="password">
+    <!--<input type="password" class="form-control" placeholder="{{ confpswdPH }}" required="" autocomplete="off" ng-model="confpswd">-->
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit" hm-tap="register()">{{ registerName }}</button>
+  </form>
+</div>

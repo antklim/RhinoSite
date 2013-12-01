@@ -68,17 +68,30 @@ describe('service', function() {
 			expect(SignInForm).not.toBeUndefined();
 			expect(SignInForm.button).not.toBeUndefined();
 			expect(SignInForm.button.signin).not.toBeUndefined();
-			expect(SignInForm.button.register).not.toBeUndefined();
 
 			expect(SignInForm.placeholder).not.toBeUndefined();
 			expect(SignInForm.placeholder.email).not.toBeUndefined();
 			expect(SignInForm.placeholder.password).not.toBeUndefined();
 
 			expect(SignInForm.label).not.toBeUndefined();
-			expect(SignInForm.label.divider).not.toBeUndefined();
 			expect(SignInForm.label.signin).not.toBeUndefined();
 			expect(SignInForm.label.remember).not.toBeUndefined();
-			expect(SignInForm.label.register).not.toBeUndefined();
+		}));
+	});
+
+	describe('sign up form', function() {
+		it('should return sign up form settings', inject(function(SignUpForm) {
+			expect(SignUpForm).not.toBeUndefined();
+			expect(SignUpForm.button).not.toBeUndefined();
+			expect(SignUpForm.button.signup).not.toBeUndefined();
+
+			expect(SignUpForm.placeholder).not.toBeUndefined();
+			expect(SignUpForm.placeholder.email).not.toBeUndefined();
+			expect(SignUpForm.placeholder.password).not.toBeUndefined();
+			expect(SignUpForm.placeholder.confpswd).not.toBeUndefined();
+
+			expect(SignUpForm.label).not.toBeUndefined();
+			expect(SignUpForm.label.signup).not.toBeUndefined();
 		}));
 	});
 

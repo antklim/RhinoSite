@@ -31,10 +31,12 @@ RhinoIn.factory('SiteLang', ['$rootScope', function($rootScope){
  *	- type - type of the element (buttons, labels, ...)
  *	- name - element's name
  */
-RhinoIn.factory('SiteText', ['SiteLang', 'SiteTmpl', 'SearchForm', 'SignInForm', 'AboutForm', 'ProductsForm', 'ServicesForm', 'ContactForm', 'NavForm',
-		function(SiteLang, SiteTmpl, SearchForm, SignInForm, AboutForm, ProductsForm, ServicesForm, ContactForm, NavForm) {
-	var forms = {'search': SearchForm, 'signin': SignInForm, 'about': AboutForm, 
-					'products': ProductsForm, 'services': ServicesForm, 'contact': ContactForm, 'nav': NavForm};
+RhinoIn.factory('SiteText', ['SiteLang', 'SiteTmpl', 'SearchForm', 'SignInForm', 'SignUpForm', 
+				'AboutForm', 'ProductsForm', 'ServicesForm', 'ContactForm', 'NavForm',
+		function(SiteLang, SiteTmpl, SearchForm, SignInForm, SignUpForm,
+				AboutForm, ProductsForm, ServicesForm, ContactForm, NavForm) {
+	var forms = {'search': SearchForm, 'signin': SignInForm, 'signup': SignUpForm,
+					'about': AboutForm, 'products': ProductsForm, 'services': ServicesForm, 'contact': ContactForm, 'nav': NavForm};
 	var types = ['button', 'label', 'placeholder', 'text'];
 
 	return {
@@ -180,15 +182,11 @@ RhinoIn.value('SignInForm', {
 			'ru': '\u0412\u043e\u0439\u0442\u0438',
 			'en': 'Sign In'
 		},
-		register: {
-			'ru': '\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044F',
-			'en': 'Sign Up'
-		}
 	},
 	'placeholder': {
 		email: {
-			'ru': "Email\u0020\u0430\u0434\u0440\u0435\u0441",
-			'en': "Email address"
+			'ru': "\u0418\u043C\u044F\u0020\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F\u0020\u0438\u043B\u0438\u0020Email\u0020\u0430\u0434\u0440\u0435\u0441",
+			'en': "Username or Email address"
 		},
 		password: {
 			'ru': "\u041f\u0430\u0440\u043e\u043b\u044c",
@@ -197,10 +195,6 @@ RhinoIn.value('SignInForm', {
 	},
 
 	'label': {
-		divider: {
-			'ru': "\u0418\u041b\u0418",
-			'en': "OR"
-		},
 		signin: {
 			'ru': "\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430\u002c\u0020\u0432\u043e\u0439\u0434\u0438\u0442\u0435",
 			'en': "Please sign in"
@@ -209,9 +203,44 @@ RhinoIn.value('SignInForm', {
 			'ru': "\u0417\u0430\u043f\u043e\u043c\u043d\u0438\u0442\u044c\u0020\u043c\u0435\u043d\u044f",
 			'en': "Remember me"
 		},
-		register: {
+		forgot: {
+			'ru': "\u0417\u0430\u0431\u044B\u043B\u0438\u0020\u043F\u0430\u0440\u043E\u043B\u044C\u003F",
+			'en': "Forgot password?"
+		}
+	}
+});
+
+RhinoIn.value('SignUpForm', {
+
+	'button': {
+		signup: {
+			'ru': '\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044F',
+			'en': 'Sign Up'
+		}
+	},
+	'placeholder': {
+		username: {
+			'ru': "\u0418\u043C\u044F\u0020\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F",
+			'en': "Username"
+		},
+		email: {
+			'ru': "Email\u0020\u0430\u0434\u0440\u0435\u0441",
+			'en': "Email address"
+		},
+		password: {
+			'ru': "\u041f\u0430\u0440\u043e\u043b\u044c",
+			'en': "Password"
+		},
+		confpswd: {
+			'ru': "\u041F\u043E\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u0435\u0020\u043f\u0430\u0440\u043e\u043b\u044c",
+			'en': "Confirm password"
+		}
+	},
+
+	'label': {
+		signup: {
 			'ru': "\u0417\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u0443\u0439\u0442\u0435\u0441\u044c",
-			'en': "Please register"
+			'en': "Please sign up"
 		}
 	}
 

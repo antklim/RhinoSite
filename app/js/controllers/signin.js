@@ -2,10 +2,6 @@ function SignInCtrl($scope, SiteText) {
 	$scope.email = "";
 	$scope.password = "";
 
-	var getDivider = function() {
-		return SiteText.getContent("signin.label.divider");
-	};
-
 	var getEmailPH = function() {
 		return SiteText.getContent("signin.placeholder.email");
 	};
@@ -18,10 +14,6 @@ function SignInCtrl($scope, SiteText) {
 		return SiteText.getContent("signin.button.signin");
 	};
 
-	var getRegisterName = function() {
-		return SiteText.getContent("signin.button.register");
-	};
-
 	var getSignInLabel = function() {
 		return SiteText.getContent("signin.label.signin");
 	};
@@ -30,19 +22,17 @@ function SignInCtrl($scope, SiteText) {
 		return SiteText.getContent("signin.label.remember");
 	};
 
-	var getRegisterLabel = function() {
-		return SiteText.getContent("signin.label.register");
+	var getForgot = function() {
+		return SiteText.getContent("signin.label.forgot");
 	};
 
 	$scope.init = function() {
-		$scope.divider = getDivider();
 		$scope.emailPH = getEmailPH();
 		$scope.passwordPH = getPasswordPH();
 		$scope.signInName = getSignInName();
-		$scope.registerName = getRegisterName();
 		$scope.signInLabel = getSignInLabel();
 		$scope.rememberMe = getRememberMe();
-		$scope.registerLabel = getRegisterLabel();
+		$scope.forgot = getForgot();
 	};
 
 	$scope.init();
@@ -51,7 +41,5 @@ function SignInCtrl($scope, SiteText) {
 		$scope.init();
 	});
 
-	$scope.signin = function() {
-		console.log($scope.email, $scope.password);
-	};
+	$scope.signin = function() {};
 }
