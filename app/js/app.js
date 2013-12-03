@@ -30,6 +30,9 @@ requirejs.config({
 		'services/services': {
 			deps: ['rhinoin']
 		},
+		'services/news': {
+			deps: ['rhinoin']
+		},
 		'controllers/nav': {
 			deps: ['services/services']
 		},
@@ -40,7 +43,7 @@ requirejs.config({
 			deps: ['services/services']
 		},
 		'bootstrap': {
-			deps: ['rhinoin', 'controllers/nav', 'controllers/search', 'directives/directives']
+			deps: ['rhinoin', 'controllers/nav', 'controllers/search', 'directives/directives', 'services/news']
 		}
 	}
 });

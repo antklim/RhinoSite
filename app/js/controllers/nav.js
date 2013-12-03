@@ -34,6 +34,10 @@ function NavCtrl($scope, $rootScope, $location, SiteMap, SiteLang, SiteLangList,
 		return SiteText.getContent("nav.label.about");
 	};
 
+	var getNews = function() {
+		return SiteText.getContent("nav.label.news");
+	};
+
 	var getServices = function() {
 		return SiteText.getContent("nav.label.services");
 	};
@@ -57,6 +61,7 @@ function NavCtrl($scope, $rootScope, $location, SiteMap, SiteLang, SiteLangList,
 	$scope.init = function() {
 		$scope.home = getHome();
 		$scope.about = getAbout();
+		$scope.news = getNews();
 		$scope.services = getServices();
 		$scope.products = getProducts();
 		$scope.contact = getContact();

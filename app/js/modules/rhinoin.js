@@ -65,6 +65,30 @@ RhinoIn.config(['$routeProvider', '$controllerProvider', '$compileProvider', '$f
 			}
 		});
 
+		$routeProvider.when('/news', {
+			templateUrl: './partials/news.html',
+			controller: 'NewsCtrl',
+			resolve: {
+			
+				load: ['$q', '$rootScope', function($q, $rootScope) {
+
+					var deferred = $q.defer();
+					var deps = [
+						'services/services',
+						'controllers/news'
+					];
+
+					require(deps, function() {
+						$rootScope.$apply(function() {
+							deferred.resolve();
+						});
+					});
+
+					return deferred.promise;
+				}]
+			}
+		});
+
 		$routeProvider.when('/services', {
 			templateUrl: './partials/services.html',
 			controller: 'ServicesCtrl',

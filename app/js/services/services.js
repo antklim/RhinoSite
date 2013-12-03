@@ -31,12 +31,13 @@ RhinoIn.factory('SiteLang', ['$rootScope', function($rootScope){
  *	- type - type of the element (buttons, labels, ...)
  *	- name - element's name
  */
-RhinoIn.factory('SiteText', ['SiteLang', 'SiteTmpl', 'SearchForm', 'SignInForm', 'SignUpForm', 
-				'AboutForm', 'ProductsForm', 'ServicesForm', 'ContactForm', 'NavForm',
+RhinoIn.factory('SiteText', ['SiteLang', 'SiteTmpl', 'SearchForm', 'SignInForm', 'SignUpForm',
+				'AboutForm', 'ProductsForm', 'ServicesForm', 'ContactForm', 'NavForm', 'HomeForm', 'NewsForm',
 		function(SiteLang, SiteTmpl, SearchForm, SignInForm, SignUpForm,
-				AboutForm, ProductsForm, ServicesForm, ContactForm, NavForm) {
+				AboutForm, ProductsForm, ServicesForm, ContactForm, NavForm, HomeForm, NewsForm) {
 	var forms = {'search': SearchForm, 'signin': SignInForm, 'signup': SignUpForm,
-					'about': AboutForm, 'products': ProductsForm, 'services': ServicesForm, 'contact': ContactForm, 'nav': NavForm};
+					'about': AboutForm, 'products': ProductsForm, 'services': ServicesForm, 
+					'contact': ContactForm, 'nav': NavForm, 'home': HomeForm, 'news': NewsForm};
 	var types = ['button', 'label', 'placeholder', 'text'];
 
 	return {
@@ -61,7 +62,7 @@ RhinoIn.factory('SiteText', ['SiteLang', 'SiteTmpl', 'SearchForm', 'SignInForm',
 				if (!_.has(forms[ arr[0] ][ arr[1] ], arr[2]) ) {
 					return null;
 				} else {
-					var lang = SiteLang.getLanguage();		
+					var lang = SiteLang.getLanguage();
 					var content = forms[ arr[0] ][ arr[1] ][ arr[2] ][ lang.key ];
 
 					if (_.isUndefined(content)) {
@@ -109,6 +110,9 @@ RhinoIn.value('SiteMap', {
 	'about': {
 		location: '/about',
 	},
+	'news': {
+		location: '/news',
+	},
 	'services': {
 		location: '/services',
 	},
@@ -136,6 +140,10 @@ RhinoIn.value('NavForm', {
 			'ru': '\u041e\u0020\u043d\u0430\u0441',
 			'en': 'About'
 		},
+		news: {
+			'ru': '\u041D\u043E\u0432\u043E\u0441\u0442\u0438',
+			'en': 'News'
+		},
 		services: {
 			'ru': '\u0421\u0435\u0440\u0432\u0438\u0441\u044b',
 			'en': 'Services'
@@ -157,6 +165,29 @@ RhinoIn.value('NavForm', {
 			'en': 'Sign In'
 		}
 	}
+});
+
+RhinoIn.value('HomeForm', {
+	'text': {
+		home_head: {
+				'ru': "Rhino In",
+				'en': "Rhino In"
+		},
+		home_body: {
+				'ru': "This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.",
+				'en': "This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique."
+		}
+	},
+	'button': {
+		learn: {
+			'ru': 'Learn more\u0020\u00BB',
+			'en': 'Learn more\u0020\u00BB'
+		},
+		view: {
+			'ru': 'View details\u0020\u00BB',
+			'en': 'View details\u0020\u00BB'
+		}
+	},
 });
 
 RhinoIn.value('SearchForm', {
@@ -279,6 +310,10 @@ RhinoIn.value('AboutForm', {
 			'en': ""
 		}
 	}
+});
+
+RhinoIn.value('NewsForm', {
+
 });
 
 RhinoIn.value('ProductsForm', {
