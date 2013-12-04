@@ -17,22 +17,9 @@ function ProductsCtrl($scope, $sce, SiteText) {
 		return $sce.trustAsHtml(head + body);
 	};
 
-	var getOurPlugins = function() {
-		return SiteText.getContent("products.label.plugins");
-	};
-
-	var getOurPluginsText = function() {
-		var head = SiteText.getContent("products.text.plugins.head"),
-			body = SiteText.getContent("products.text.plugins.body");
-
-		return $sce.trustAsHtml(head + body);
-	};
-
 	$scope.init = function() {
 		$scope.products = getProducts();
 		$scope.productsText = getProductsText();
-		$scope.ourPlugins = getOurPlugins();
-		$scope.ourPluginsText = getOurPluginsText();
 	};
 
 	$scope.init();

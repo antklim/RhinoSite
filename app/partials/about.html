@@ -9,6 +9,12 @@
           <li class='{{ activeItem == "team" && "active" || "" }}'>
             <a href hm-tap='anchor("team")'>{{ ourTeam }}</a>
           </li>
+          <li class='{{ activeItem == "services" && "active" || "" }}'>
+            <a href hm-tap='anchor("services")'>{{ ourServices }}</a>
+          </li>
+          <li class='{{ activeItem == "plugins" && "active" || "" }}'>
+            <a href hm-tap='anchor("plugins")'>{{ ourPlugins }}</a>
+          </li>
           <li class='{{ activeItem == "contact" && "active" || "" }}'>
             <a href hm-tap='anchor("contact")'>{{ contact }}</a>
           </li>
@@ -53,6 +59,22 @@
             </a>
           </div>
         </div>
+      </div>
+
+      <!-- Our services ================================================== -->
+      <div class="bs-docs-section">
+        <div class="page-header">
+          <h1 id="about-rhino">{{ ourServices }}</h1>
+        </div>
+        <div ng-bind-html="ourServicesText"></div>
+      </div>
+
+      <!-- Our plugins ================================================== -->
+      <div class="bs-docs-section">
+        <div class="page-header">
+          <h1 id="about-rhino">{{ ourPlugins }}</h1>
+        </div>
+        <div ng-bind-html="ourPluginsText"></div>
       </div>
 
       <!-- Contact ================================================== -->
