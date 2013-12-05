@@ -44,11 +44,18 @@ describe('service', function() {
 			expect(NavForm.label).not.toBeUndefined();
 			expect(NavForm.label.home).not.toBeUndefined();
 			expect(NavForm.label.about).not.toBeUndefined();
+			expect(NavForm.label.news).not.toBeUndefined();
 			expect(NavForm.label.services).not.toBeUndefined();
 			expect(NavForm.label.products).not.toBeUndefined();
 			expect(NavForm.label.contact).not.toBeUndefined();
 			expect(NavForm.label.signup).not.toBeUndefined();
 			expect(NavForm.label.signin).not.toBeUndefined();
+		}));
+	});
+
+	describe('home form', function() {
+		it('should return home form settings', inject(function(HomeForm) {
+
 		}));
 	});
 
@@ -76,6 +83,7 @@ describe('service', function() {
 			expect(SignInForm.label).not.toBeUndefined();
 			expect(SignInForm.label.signin).not.toBeUndefined();
 			expect(SignInForm.label.remember).not.toBeUndefined();
+			expect(SignInForm.label.forgot).not.toBeUndefined();
 		}));
 	});
 
@@ -100,6 +108,8 @@ describe('service', function() {
 			expect(AboutForm.label).not.toBeUndefined();
 			expect(AboutForm.label.about_rhino).not.toBeUndefined();
 			expect(AboutForm.label.our_team).not.toBeUndefined();
+			expect(AboutForm.label.our_services).not.toBeUndefined();
+			expect(AboutForm.label.our_plugins).not.toBeUndefined();
 
 			expect(AboutForm.text).not.toBeUndefined();
 			expect(AboutForm.text.about_rhino_head).not.toBeUndefined();
@@ -107,6 +117,16 @@ describe('service', function() {
 			expect(AboutForm.text.our_team_head).not.toBeUndefined();
 			expect(AboutForm.text.our_team_body).not.toBeUndefined();
 			expect(AboutForm.text.our_team_members).not.toBeUndefined();
+			expect(AboutForm.text.services_head).not.toBeUndefined();
+			expect(AboutForm.text.services_body).not.toBeUndefined();
+			expect(AboutForm.text.plugins_head).not.toBeUndefined();
+			expect(AboutForm.text.plugins_body).not.toBeUndefined();
+		}));
+	});
+
+	describe('news form', function() {
+		it('should return news form settings', inject(function(NewsForm) {
+
 		}));
 	});
 
@@ -114,13 +134,10 @@ describe('service', function() {
 		it('should return products form settings', inject(function(ProductsForm) {
 			expect(ProductsForm.label).not.toBeUndefined();
 			expect(ProductsForm.label.products).not.toBeUndefined();
-			expect(ProductsForm.label.plugins).not.toBeUndefined();
 
 			expect(ProductsForm.text).not.toBeUndefined();
 			expect(ProductsForm.text.products_head).not.toBeUndefined();
 			expect(ProductsForm.text.products_body).not.toBeUndefined();
-			expect(ProductsForm.text.plugins_head).not.toBeUndefined();
-			expect(ProductsForm.text.plugins_body).not.toBeUndefined();
 		}));
 	});
 
